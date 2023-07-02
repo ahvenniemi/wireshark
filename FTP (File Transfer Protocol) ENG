@@ -36,8 +36,8 @@ Transmission and Reception Ports:
 
 Using Wireshark for Traffic Capture and Analysis:
 
-Wireshark is a popular network analysis tool that allows capturing and analyzing traffic. 
-You can use Wireshark in the following ways to analyze FTP traffic:
+	Wireshark is a popular network analysis tool that allows capturing and analyzing traffic. 
+	You can use Wireshark in the following ways to analyze FTP traffic:
 
 	Select the network whose traffic you want to monitor.
 
