@@ -34,7 +34,9 @@ Tärkeimmät ominaisuudet:
 	
 	RTP tukee erilaisia käyttäjänohjaustoimintoja, kuten äänenvoimakkuuden säätöä, puskurien hallintaa ja ajansiirtotietoja.
 
-	Käyttö: RTP:ta käytetään laajalti reaaliaikaisessa multimedia-viestinnässä, kuten Voice over IP (VoIP) -puheluissa, 
+	Käyttö: 
+
+	RTP:ta käytetään laajalti reaaliaikaisessa multimedia-viestinnässä, kuten Voice over IP (VoIP) -puheluissa, 
 	videoneuvotteluissa, streaming-palveluissa ja interaktiivisissa live-lähetyksissä. Se on tärkeä protokolla, joka 
 	mahdollistaa korkealaatuisen ja viiveettömän mediasisällön siirron verkon yli.
 
