@@ -36,7 +36,7 @@ Key Features:
 	RTP supports various user control functions such as volume adjustment, buffer 
 	management, and timing information.
 
-	Usage: 
+Usage: 
 	
 	RTP is widely used in real-time multimedia communication, such as Voice over IP (VoIP) 
 	calls, video conferencing, streaming services, and interactive live broadcasts. It is an essential 
@@ -46,7 +46,7 @@ Key Features:
 	transmission. FEC adds extra redundancy to packets, allowing for error detection and correction 
 	at the receiving end.
 
-	Codec support: 
+Codec support: 
 	
 	RTP does not define audio or video encoding methods itself. Instead, it supports 
 	various audio and video codecs such as G.711 (PCMU), G.729, H.264, VP8, etc. This allows flexibility 
