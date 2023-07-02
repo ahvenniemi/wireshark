@@ -1,0 +1,149 @@
+SNMP (Simple Network Management Protocol)
+
+Introduction:
+
+	SNMP is a network protocol used for managing and monitoring network devices. 
+	It provides a standardized way to monitor and control network devices such as 
+	routers, switches, firewalls, and servers. SNMP enables network administrators to 
+	remotely monitor and manage network devices.
+
+Basics:
+
+	SNMP is designed to use a client-server model where a monitoring system (SNMP manager) 
+	communicates with network devices (SNMP agents). The SNMP manager sends requests to 
+	agent devices and receives information about device status, performance, usage, and 
+	other parameters.
+
+Operation:
+
+	The SNMP protocol uses messages called Protocol Data Units (PDUs) for communication
+	between the monitoring system and network devices. The most commonly used SNMP 
+	PDUs are GET and SET requests. With a GET request, the monitoring system requests 
+	information about a specific device, and with a SET request, it sets the value of a 
+	specific parameter on the device. The SNMP agent responds to the requests by sending 
+	back information or confirmation of the performed action.
+
+Key Features:
+
+	Communication between the monitoring system and network devices
+
+	Request-response model
+
+	PDU messages for data transfer
+	
+	Extensive monitoring and management capabilities
+
+Usage:
+
+	SNMP protocol is widely used in network device management. It is used for monitoring 
+	the status of routers and switches, traffic monitoring, performance monitoring, and 
+	troubleshooting. SNMP also allows remote management of network devices, enabling 
+	administrators to control devices and make changes remotely.
+
+	Summary of Protocol Usage:
+
+	SNMP is a network protocol that enables the management and monitoring of network 
+	devices. It uses a client-server model between the monitoring system and network 
+	devices. The SNMP protocol is based on PDU messages sent during data transfer. 
+	SNMP is widely used in network environments for performing various monitoring and 
+	management functions.
+
+Transmission and Reception Ports:
+
+	SNMP uses the UDP protocol by default. SNMP messages are sent using the following 
+	ports:
+
+	SNMP without security features:
+
+	UDP port 161
+
+	SNMP with security features (SNMPv3):
+
+	UDP port 161 (reception) and UDP port 162 (transmission)
+
+	Using Wireshark for Traffic Capture and Analysis:
+
+	Wireshark is a useful tool for capturing and analyzing SNMP traffic. You can use the 
+	following filters in Wireshark to capture SNMP traffic:
+
+	Sending SNMP messages:
+
+	"udp.dstport == 162"
+
+	Receiving SNMP messages:
+
+	"udp.srcport == 161"
+
+	By using filters, you can capture only the SNMP traffic you want and inspect its 
+	packets and details.
+
+Vulnerabilities:
+
+	SNMP protocol has some vulnerabilities that can expose network devices to attacks. 
+	Common vulnerabilities include weak password encryption, weak authentication, and 
+	attackers gaining access to device management capabilities through SNMP. Additionally, 
+	SNMPv1 and SNMPv2 are susceptible to security issues, while SNMPv3 provides better 
+	security in terms of encryption and authentication.
+
+Known Attacks on the Protocol:
+
+	Some known attacks against the SNMP protocol include SNMP data spoofing, password 
+	disclosure, attacker gaining access to device management functions, and misuse of 
+	resources through SNMP. Attackers can also exploit weak passwords or authentication 
+	methods to gain control of devices.
+
+Additional Information:
+
+	SNMPv3 Security Features: 
+	
+	SNMPv3 is a more secure version of the SNMP protocol that provides encryption, 
+	authentication, and controlled access to network devices. You can mention that 
+	SNMPv3 offers better security than SNMPv1 and SNMPv2.
+
+	Significance of SNMP Community: 
+	
+	The SNMP community is an essential part of using SNMP. The SNMP community acts 
+	as a password that ensures the security of connections between the monitoring 
+	system and network devices. You can mention that using strong SNMP community 
+	strings is important for securing network devices.
+
+	SNMP Traps: 
+	
+	SNMP traps are notifications sent from SNMP managers to SNMP agents when an event 
+	or condition changes. You can mention that SNMP traps allow real-time notification 
+	of events such as fault detection or alarms.
+
+	SNMP Databases: 
+	
+	SNMP databases are databases that store the information and status provided by 
+	SNMP agents. These data can be used for analysis and reporting by the monitoring system. 
+	You can mention that the use of SNMP databases can assist in network management and 
+	troubleshooting.
+
+	SNMP Proxies: 
+	
+	SNMP proxies are intermediary servers that can forward SNMP requests and responses 
+	between different networks. You can mention that SNMP proxies enable the use of an 
+	extended monitoring system in more complex network environments.
+
+	SNMP Security Guidelines: 
+	
+	You can include information about SNMP security guidelines, such as recommended 
+	practices for SNMP community management, password strength, and implementation of 
+	security measures.
+
+	SNMP Implementations and Tools: 
+	
+	You can mention some commonly used SNMP implementations and tools, such as Net-SNMP, 
+	SNMPc, Cacti, or Zabbix. These tools help network administrators implement SNMP-based 
+	monitoring systems.
+
+Summary:
+
+	SNMP (Simple Network Management Protocol) is a network protocol that allows the 
+	management and monitoring of network devices. It is based on a client-server model 
+	and uses PDU messages for data transfer. SNMP uses the UDP protocol and by default, 
+	it uses ports 161 (reception) and 162 (transmission). Wireshark is a useful tool for 
+	capturing and analyzing SNMP traffic. The SNMP protocol can be vulnerable to issues 
+	such as weak password encryption and authentication. Known attacks include SNMP data 
+	spoofing and attacker gaining access to device management capabilities.

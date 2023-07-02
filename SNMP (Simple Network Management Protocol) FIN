@@ -1,0 +1,150 @@
+SNMP (Simple Network Management Protocol)
+
+Johdanto:
+
+	SNMP verkkoprotokolla, jota käytetään verkkolaitteiden hallintaan ja valvontaan. 
+	Tarjoaa standardoidun tavan valvoa ja hallita verkon laitteita, kuten reitittimiä, 
+	kytkimiä, palomuureja ja palvelimia. SNMP mahdollistaa verkkoylläpitäjien 
+	etävalvonnan ja etähallinnan verkon laitteisiin.
+
+Perusteet:
+
+	SNMP on suunniteltu käyttämään asiakas-palvelin-mallia, jossa valvontajärjestelmä 
+	(SNMP-manageri) kommunikoi verkon laitteiden (SNMP-agentit) kanssa. SNMP-manageri 
+	lähettää pyyntöjä agenttilaitteille ja vastaanottaa tietoja laitteiden tilasta, 
+	suorituskyvystä, käytöstä ja muista parametreista.
+
+Toiminta:
+
+	SNMP-protokolla käyttää viestejä, joita kutsutaan PDU :ksi (Protocol Data Units), 
+	tiedonsiirtoon valvontajärjestelmän ja verkon laitteiden välillä. Yleisimmin 
+	käytetyt SNMP-PDU:t ovat GET- ja SET-pyynnöt. GET-pyynnöllä valvontajärjestelmä 
+	pyytää tietoja tietystä laitteesta, ja SET-pyynnöllä se asettaa tietyn parametrin 
+	arvon laitteessa. SNMP-agentti vastaa pyyntöihin lähettämällä takaisin tietoja 
+	tai vahvistuksen toiminnon suorittamisesta.
+
+Tärkeimmät ominaisuudet:
+
+	Valvontajärjestelmän ja verkon laitteiden välinen kommunikaatio
+	Pyyntö-vastausmalli
+	PDU-viestit tiedonsiirrossa
+	Laajat valvonta- ja hallintatoiminnot
+
+Käyttö:
+	
+	SNMP-protokolla on laajalti käytössä verkkolaitteiden hallinnassa. Sitä käytetään 
+	reitittimien ja kytkinten tilan valvontaan, liikenteen seurantaan, suorituskyvyn 
+	valvontaan ja vianmääritykseen. SNMP mahdollistaa myös verkon laitteiden etähallinnan, 
+	jolloin ylläpitäjät voivat hallita laitteita ja tehdä muutoksia etänä.
+
+Yhteenveto protokollan käytöstä:
+
+	SNMP on verkkoprotokolla, joka mahdollistaa verkkolaitteiden hallinnan ja valvonnan. 
+	Se käyttää asiakas-palvelin-mallia valvontajärjestelmän ja verkon laitteiden välillä. 
+	SNMP-protokolla perustuu PDU-viesteihin, joita lähetetään tiedonsiirrossa. SNMP on 
+	laajasti käytössä verkkoympäristöissä erilaisten valvonta- ja hallintatoimintojen 
+	suorittamiseen.
+
+Lähetys- ja vastaanottosatamat:
+
+	SNMP käyttää oletuksena UDP-protokollaa. SNMP-viestit lähetetään seuraavilla 
+	porteilla:
+
+	SNMP-ilman-turvaominaisuuksia: 
+	
+	UDP-portti 161
+
+	SNMP-turvaominaisuuksilla (SNMPv3): 
+	
+	UDP-portti 161 (vastaanotto) ja UDP-portti 162 (lähetys)
+
+Wiresharkin käyttö liikenteen kaappaamiseen ja analysointiin:
+	
+	Wireshark on hyvä työkalu SNMP-liikenteen kaappaamiseen ja analysointiin. Voit 
+	käyttää seuraavia suodattimia 
+	
+	Wiresharkin avulla kaapatakseksi SNMP-liikenteen:
+
+	SNMP-viestien lähettäminen: 
+	
+	"udp.dstport == 162"
+	
+	SNMP-viestien vastaanottaminen: 
+	
+	"udp.srcport == 161"
+	
+	Suodattimien avulla voit kaapata vain haluamasi SNMP-liikenteen ja tarkastella sen 
+	paketteja ja yksityiskohtia.
+
+Haavoittuvuudet:
+
+	SNMP-protokollalla on joitain haavoittuvuuksia, jotka voivat altistaa verkkolaitteet 
+	hyökkäyksille. Yleisiä haavoittuvuuksia ovat salasanojen heikot salaukset, heikko 
+	tunnistautuminen ja hyökkääjän pääsy laitteiden hallintaominaisuuksiin SNMP:n kautta. 
+	Lisäksi SNMPv1 ja SNMPv2 ovat alttiita tietoturvaongelmille, kun taas SNMPv3 tarjoaa 
+	paremman tietoturvan salauksen ja tunnistautumisen osalta.
+
+Protokollan tunnetut hyökkäykset:
+
+	Joitain tunnettuja hyökkäyksiä SNMP-protokollaa vastaan ovat SNMP-tietojen väärentäminen, 
+	salasanojen paljastaminen, hyökkääjän pääsy laitteiden hallintatoimintoihin ja resurssien 
+	väärinkäyttö SNMP:n kautta. Hyökkääjät voivat myös hyödyntää heikkoja salasanoja tai 
+	tunnistautumismenetelmiä saadakseen laitteiden hallinnan.
+	
+Lisätietoa:
+
+	SNMPv3-turvaominaisuudet: 
+	
+	SNMPv3 on tietoturvallisempi versio SNMP-protokollasta, joka tarjoaa salauksen, 
+	tunnistautumisen ja luvanvaraisen pääsyn verkkolaitteisiin. Voit mainita, että SNMPv3 
+	tarjoaa paremman tietoturvan kuin SNMPv1 ja SNMPv2.
+
+	SNMP-yhteisön merkitys: 
+	
+	SNMP-yhteisö on välttämätön osa SNMP:n käyttöä. SNMP-yhteisö toimii salasanana, 
+	joka varmistaa valvontajärjestelmän ja verkon laitteiden välisten yhteyksien 
+	turvallisuuden. Voit mainita, että vahvojen SNMP-yhteisösanojen käyttö on tärkeää 
+	verkkolaitteiden suojaamiseksi.
+
+	SNMP-trapit: 
+	
+	SNMP-trapit ovat ilmoituksia, jotka lähetetään SNMP-managerilta SNMP-agentille, 
+	kun tapahtuma tai tila muuttuu. Voit mainita, että SNMP-trapit mahdollistavat 
+	reaaliaikaisen ilmoituksen tapahtumista, kuten vian havaitsemisesta tai hälytyksistä.
+
+	SNMP-tietokannat: 
+	
+	SNMP-tietokannat ovat tietokantoja, jotka tallentavat SNMP-agenttien tarjoamat tiedot 
+	ja tilat. Näitä tietoja voidaan sitten käyttää valvontajärjestelmän analysointiin ja 
+	raportointiin. Voit mainita, että SNMP-tietokantojen käyttö voi auttaa verkonhallinnassa 
+	ja vianmäärityksessä.
+
+	SNMP-proxyt: 
+	
+	SNMP-proxyt ovat välityspalvelimia, jotka voivat välittää SNMP-pyyntöjä ja vastauksia 
+	eri verkkojen välillä. Voit mainita, että SNMP-proxyt mahdollistavat laajennetun 
+	valvontajärjestelmän käytön monimutkaisemmissa verkkoympäristöissä.
+
+	SNMP-tietoturvaohjeet: Voit lisätä tietoa SNMP:n tietoturvaohjeista, kuten 
+	suositelluista käytännöistä SNMP-yhteisön hallinnassa, salasanojen vahvistamisessa 
+	ja tietoturvan toteuttamisessa.
+
+	SNMP-toteutukset ja -työkalut: 
+	
+	Voit mainita joitain yleisesti käytettyjä SNMP-toteutuksia ja työkaluja, kuten 
+	Net-SNMP, SNMPc, Cacti tai Zabbix. Näiden avulla verkkoylläpitäjät voivat toteuttaa 
+	SNMP-pohjaisen valvontajärjestelmän.
+
+Yhteenveto:
+
+	SNMP (Simple Network Management Protocol) on verkkoprotokolla, joka mahdollistaa 
+	verkkolaitteiden hallinnan ja valvonnan. Perustuu asiakas-palvelin-malliin ja 
+	käyttää PDU-viestejä tiedonsiirrossa. SNMP käyttää UDP-protokollaa ja käyttää oletuksena 
+	portteja 161 (vastaanotto) ja 162 (lähetys). Wireshark on hyvä työkalu SNMP-liikenteen 
+	kaappaamiseen ja analysointiin. SNMP-protokolla voi olla altis haavoittuvuuksille, 
+	kuten salasanojen heikolle salaukselle ja tunnistautumisongelmille. Tunnettuja 
+	hyökkäyksiä ovat SNMP-tietojen väärentäminen ja hyökkääjän pääsy laitteiden 
+	hallintaominaisuuksiin.
+	
+	
+	
