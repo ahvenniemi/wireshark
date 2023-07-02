@@ -1,0 +1,91 @@
+ARP (Address Resolution Protocol)
+
+Introduction:
+
+	ARP is a network protocol used to resolve associations between IP addresses and 
+	physical MAC addresses. It is an essential protocol in the network layer that 
+	enables proper routing and communication between network devices.
+
+Basics:
+
+	The ARP protocol operates in the same network layer as the Internet Protocol (IP). 
+	It allows determining the physical MAC address corresponding to a specific IP address. 
+	When a network device wants to send a message to another device within the same network 
+	segment, it uses the ARP protocol to determine the recipient's MAC address.
+
+Operation:
+
+	The ARP protocol operates on a query-response model. The sending device broadcasts 
+	an ARP request on the local network, asking for a response with the MAC address 
+	corresponding to a specific IP address. The target device replies with an ARP reply, 
+	providing its own physical MAC address. The sending device can then use the received 
+	MAC address to send the message to the recipient.
+
+Key Features:
+
+	Resolving associations between IP addresses and MAC addresses
+
+	Query-response model
+	
+	Used within the same network segment
+
+Usage:
+
+	The ARP protocol is commonly used in Ethernet networks where the transmission of 
+	IP packets requires physical MAC addresses. It is a vital component for network 
+	communication, ensuring that traffic is directed to the correct recipient within the 
+	same network segment.
+
+Summary of Protocol Usage:
+
+	The ARP protocol allows resolving associations between IP addresses and MAC 
+	addresses within the same network segment. It operates on a query-response model, 
+	where a sending device requests the MAC address of the recipient using an ARP request, 
+	and the recipient responds with an ARP reply. This enables proper routing and 
+	communication between network devices.
+
+	ARP utilizes an ARP cache to store associations between IP addresses and MAC addresses, 
+	allowing it to speed up future data transfers. This cache contains information about 
+	frequently used address pairs.
+
+Transmission and Reception Ports:
+
+	The ARP protocol does not use specific transmission and reception ports. ARP requests 
+	and replies are carried within Ethernet frames and make use of Ethernet's transmission 
+	rules. The frames contain Ethernet MAC addresses and related message transmission 
+	mechanisms.
+
+	Using Wireshark for Traffic Capture and Analysis:
+
+	Wireshark is an excellent tool for capturing and analyzing ARP traffic. You can use 
+	the following filters in Wireshark to capture ARP traffic:
+
+	ARP Requests: "arp.opcode == 1"
+	
+	ARP Replies: "arp.opcode == 2"
+
+	By using these filters, you can capture only the ARP traffic you want and inspect 
+	its packets and details.
+
+Vulnerabilities:
+
+	The ARP protocol has some vulnerabilities that can be exploited by attackers. 
+	One well-known vulnerability is ARP spoofing, where an attacker sends false ARP 
+	messages to manipulate associations between IP addresses and MAC addresses. This 
+	can lead to malicious traffic redirection and, for example, man-in-the-middle 
+	attacks.
+
+Known Attacks on the Protocol:
+
+	Some known attacks against the ARP protocol include ARP spoofing, ARP flood, and 
+	ARP storm. These attacks aim to manipulate ARP messages or flood the network with 
+	ARP requests, causing disruption to network traffic, communication interruptions, 
+ 	misdirected traffic.
+
+Summary:
+
+	The ARP protocol allows the resolution of associations between IP addresses and MAC 
+	addresses in the network layer. It is used in Ethernet networks, operating on a 
+	query-response model. The ARP protocol has vulnerabilities such as ARP spoofing 
+	and is susceptible to various attacks like ARP floods. Wireshark is a useful tool 
+	for analyzing and monitoring ARP traffic.

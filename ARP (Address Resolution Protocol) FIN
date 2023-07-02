@@ -1,0 +1,96 @@
+ARP (Address Resolution Protocol)
+
+Johdanto:
+
+	ARP verkkoprotokolla, jota käytetään IP-osoitteiden ja fyysisten MAC-osoitteiden 
+	välisten liitosten selvittämiseen. Se on tärkeä protokolla verkkokerroksen toiminnassa 
+	ja mahdollistaa tietoliikenteen oikean reitityksen ja tiedonsiirron verkon laitteiden v
+	älillä.
+
+Perusteet:
+
+	ARP-protokolla toimii samassa verkkokerroksessa kuin Internet Protocol (IP). Sen avulla 
+	voidaan selvittää, mikä fyysinen MAC-osoitte vaastaa tiettyä IP-osoitetta. Kun 
+	verkkolaite haluaa lähettää viestin toiselle laitteelle samassa verkkosegmentissä, 
+	se käyttää ARP-protokollaa selvittääkseen vastaanottajan MAC-osoitteen.
+
+Toiminta:
+
+	ARP-protokollan toiminta perustuu kysely-vastaus-malliin. Lähettävä laite lähettää 
+	ARP-kyselyn (ARP Request) lähiverkon yleislähetyksenä, jossa se pyytää vastausta 
+	tietystä IP-osoitteesta. Kohdelaite vastaa ARP-vastauksella (ARP Reply), jossa se 
+	ilmoittaa oma fyysinen MAC-osoitteensa. Tämän jälkeen lähettävä laite voi käyttää 
+	saamaansa MAC-osoitetta viestin lähettämiseen vastaanottajalle.
+
+	Tärkeimmät ominaisuudet:
+
+	IP-osoitteiden ja MAC-osoitteiden välisten liitosten selvittäminen
+	
+	Kysely-vastaus-malli
+	
+	Käyttö samassa verkkosegmentissä
+	
+Käyttö: 
+
+	ARP-protokollaa käytetään yleisesti Ethernet-verkoissa, joissa IP-pakettien siirto 
+	vaatii fyysisen MAC-osoitteen. Se on välttämätön osa verkkoliikenteen toimivuutta 
+	ja varmistaa, että tietoliikenne ohjataan oikealle vastaanottajalle samassa 
+	verkkosegmentissä.
+
+	Yhteenveto protokollan käytöstä:
+
+	ARP-protokolla mahdollistaa IP-osoitteiden ja MAC-osoitteiden liitosten selvittämisen 
+	samassa verkkosegmentissä. Se toimii kysely-vastaus-mallin periaatteella, jossa lähettävä 
+	laite pyytää vastaanottajan MAC-osoitetta ARP-kyselyllä ja vastaanottaja vastaa ARP
+	-vastauksella. Tämä mahdollistaa oikean reitityksen ja tiedonsiirron verkon laitteiden 
+	välillä.
+	
+	ARP käyttää välimuistia (ARP cache) tallentaakseen vastaavuudet IP-osoitteiden ja MAC
+	-osoitteiden välillä, jotta se voi nopeuttaa tulevia tiedonsiirtoja. Tämä välimuisti 
+	sisältää usein käytettyjen osoiteparien tietoja.
+
+Lähetys- ja vastaanottosatamat:
+
+	ARP-protokolla ei käytä erityisiä lähetys- ja vastaanottosatamia. ARP-kyselyt ja 
+	-vastaukset kulkevat Ethernet-kehyksissä ja hyödyntävät Ethernetin lähettysääntöjä. 
+	Kehyksissä käytetään Ethernetin MAC-osoitteita ja niihin liittyviä viestilähetyksen 
+	mekanismeja.
+
+	Käytä Wiresharkia liikenteen kaappaamiseen ja analysointiin seuraavilla tavoilla:
+
+	Wireshark on erinomainen työkalu ARP-liikenteen kaappaamiseen ja analysointiin. Voit 
+	käyttää seuraavia suodattimia Wiresharkin avulla kaapatakseksi ARP-liikenteen:
+
+	ARP-kyselyt: 
+	
+	"arp.opcode == 1"
+	
+	ARP-vastaukset: 
+	
+	"arp.opcode == 2"
+
+	Suodattimen avulla voit kaapata vain haluamasi ARP-liikenteen ja tarkastella sen 
+	paketteja ja yksityiskohtia.
+
+Haavoittuvuudet:
+
+	ARP-protokollalla on joitain haavoittuvuuksia, joita hyökkääjät voivat hyödyntää. 
+	Yksi tunnettu haavoittuvuus on ARP-väärentäminen (ARP spoofing), jossa hyökkääjä 
+	lähettää vääriä ARP-viestejä manipuloidakseen IP-osoitteiden ja MAC-osoitteiden liitoksia. 
+	Tämä voi johtaa haitalliseen tietoliikenteen ohjaukseen ja esimerkiksi man-in-the-middle
+	-hyökkäyksiä.
+
+Protokollan tunnetut hyökkäykset:
+
+	Joitain tunnettuja hyökkäyksiä ARP-protokollaa vastaan ovat ARP-väärentäminen, ARP
+	-tulvasyöksy (ARP flood) ja ARP-myrsky (ARP storm). Nämä hyökkäykset pyrkivät 
+	manipuloimaan ARP-viestejä tai tulvaamaan verkkoa ARP-pyynnöillä, mikä voi aiheuttaa 
+	haittaa verkkoliikenteelle, tietoliikenteen katkoksia tai väärin ohjattua liikennettä.
+
+Yhteenveto:
+
+	ARP-protokolla mahdollistaa IP-osoitteiden ja MAC-osoitteiden liitosten selvittämisen 
+	verkkokerroksella. Sitä käytetään Ethernet-verkoissa, joissa se toimii kysely-vastaus
+	-mallin periaatteella. ARP-protokollalla on haavoittuvuuksia, kuten ARP-väärentäminen, 
+	ja se voi altistua erilaisille hyökkäyksille, kuten ARP-tulvasyöksylle. Wireshark on 
+	hyödyllinen työkalu ARP-liikenteen analysointiin ja seurantaan.
