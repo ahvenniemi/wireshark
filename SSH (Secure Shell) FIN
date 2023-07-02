@@ -1,0 +1,193 @@
+SSH (Secure Shell)
+
+Johdanto
+
+	SSH (Secure Shell) on kryptattu verkko-protokolla, jota käytetään turvalliseen 
+	etäkäyttöön ja tiedostojen siirtoon verkon yli. Tämä dokumentti tarjoaa tietoa 
+	SSH:n toiminnasta ja sen käytöstä. Käymme läpi SSH:n keskeiset ominaisuudet 
+	jakäyttötavat ilman liiallista teknistä yksityiskohtaa.
+
+SSH:n toiminta
+
+	SSH tarjoaa salatun yhteyden verkon yli ja mahdollistaa etäkäytön palvelimelle 
+	tai muulle etäkoneelle. Se korvaa epävarmat protokollat, kuten Telnet, tarjoamalla 
+	vahvan salaustekniikan ja tietoturvamääritykset. SSH toimii asiakas-palvelin-mallilla, 
+	jossa SSH-palvelin kuuntelee tiettyä porttia ja odottaa asiakasyhteyksiä.
+
+SSH:n käyttö
+
+	SSH:n käyttö vaatii SSH-asiakasohjelman, kuten OpenSSH, ja SSH-palvelimen, joka on 
+	asennettu etäkoneelle.
+
+Seuraavassa on lyhyt yhteenveto SSH:n käytöstä:
+
+	Avaa SSH-asiakasohjelma terminaalissa tai SSH-klientillä.
+
+	Määritä yhteyspalvelin (SSH-palvelin) ja käyttäjätunnus, johon haluat kirjautua.
+
+	Syötä salasana tai tarvittaessa avainpariin perustuva todennus.
+
+	Kun yhteys on muodostettu, voit käyttää etäkoneen komentoriviä tai suorittaa 
+	tiedostojen siirtoa SSH:n kautta.
+
+SSH:n tärkeimmät ominaisuudet
+
+	SSH tarjoaa useita tärkeitä ominaisuuksia, jotka tekevät siitä turvallisen ja 
+	monipuolisen protokollan:
+
+	Salattu tiedonsiirto: 
+	
+	SSH käyttää vahvaa salausta, mikä suojaa tiedonsiirron luvattomalta pääsyltä.
+
+	Käyttäjätunnistus: 
+	
+	SSH vaatii käyttäjän tunnistautumisen, mikä parantaa tietoturvaa ja estää luvattoman 
+	käytön.
+
+	Porttiohjaus: 
+	
+	SSH-palvelin kuuntelee tiettyä porttia, yleensä porttia 22, jolloin se on helppo 
+	tunnistaa.
+
+	X11-rajapinta: SSH tukee X11-protokollaa, joka mahdollistaa graafisen käyttöliittymän 
+	käytön etäyhteyden kautta.
+	
+Käytä Wiresharkia SSH-liikenteen kaappaamiseen ja analysointiin seuraavilla tavoilla:
+	
+	Aseta suodatin SSH-liikenteen kaappaamiseen. Voit käyttää suodatinta "tcp.port == 22" 
+	kaapatakseen vain SSH-liikennettä, 
+	koska SSH käyttää yleensä porttia 22.
+
+	Napsauta "Start" tai vastaavaa aloitusnäppäintä Wiresharkissa aloittaaksesi liikenteen 
+	kaappaamisen.
+
+	Kun Wireshark on kaapannut liikennettä, näet listan paketeista. Voit valita yksittäisen 
+	SSH-paketin ja tarkastella sen yksityiskohtia eri välilehdillä, kuten "TCP" ja "Payload". 
+	Tämä auttaa sinua ymmärtämään SSH-liikenteen rakennetta ja sisältöä.
+
+SSH:n lähetys- ja vastaanottosatamat:
+
+	SSH käyttää oletuksena tiettyjä portteja tiedonsiirtoon. Tässä on yleisimmät SSH:n 
+	lähetys- ja vastaanottosatamat:
+
+	SSH-palvelimen kuuntelusatama: 
+	
+	TCP-portti 22 on SSH-palvelimen oletusportti, jota se kuuntelee asiakasyhteyksiä varten.	
+
+	SSH-palvelimen dynaamiset portit: 
+	
+	Kun SSH-yhteys on muodostettu, palvelin voi käyttää dynaamisia satamia tiedonsiirtoon ja 
+	hallintayhteyksiin. Nämä portit voivat vaihdella jokaisella yhteydellä.
+
+	SSH-asiakkaan lähetysportti: 
+	
+	SSH-asiakasohjelma käyttää dynaamisesti valittua lähettävää porttia yhteyden 
+	muodostamiseen SSH-palvelimen kanssa. Tämä portti vaihtelee jokaisella yhteydellä.
+
+	On tärkeää huomata, että SSH:n porttinumerot voivat vaihdella ympäristöstä riippuen, 
+	ja joskus organisaatiot voivat muuttaa SSH-portteja turvallisuussyistä.
+	
+SSH haavoittuvuudet
+
+	Salaustekniikkaan perustuva protokolla, jota käytetään etäyhteyden muodostamiseen 
+	ja tietoturvalliseen tiedonsiirtoon. Vaikka SSH:ta pidetään yleisesti turvallisena, 
+	siinä on kuitenkin havaittu joitain haavoittuvuuksia ajan mittaan. 
+	
+	Tässä on joitain tunnettuja SSH-haavoittuvuuksia:
+
+	Heikot salausalgoritmit ja avainten pituudet: Vanhemmat SSH-versiot tai huonosti 
+	konfiguroidut SSH-palvelimet saattavat tukea heikkoja salausalgoritmeja tai lyhyitä 
+	avaimia. Tämä voi altistaa salauksen murtamiselle tai hyökkääjän pääsylle järjestelmään.
+
+	Tunnistautumisen haavoittuvuudet: 
+	
+	SSH:ssa käytetään usein julkinen-avain/salausavainpariin perustuvaa tunnistautumista. 
+	Jos yksityinen avain on heikosti suojattu tai salasana on helppo arvata, hyökkääjä voi 
+	päästä käsiksi SSH-palvelimeen.
+
+	Hyökkäykset SSH-palvelinta vastaan: 
+	
+	SSH-palvelinohjelmisto voi sisältää haavoittuvuuksia, jotka mahdollistavat hyökkääjän 
+	suorittaa etähallintaa palvelimella. Tällaiset hyökkäykset voivat johtaa palvelimen 
+	kompromointiin ja luvattomaan pääsyyn.
+
+	Tiedonsiirron väärinkäyttö: 
+	
+	SSH:n kautta siirrettäviä tiedostoja voi väärinkäyttää hyökkäystarkoituksiin, kuten 
+	tiedostojen luvattomaan kopioimiseen, kryptaamiseen tai tiedostojen lisäämiseen tai 
+	poistamiseen palvelimelta.
+
+	Päivittämättömät SSH-palvelimet: Päivittämättömät SSH-palvelinohjelmistot voivat 
+	sisältää tunnettuja haavoittuvuuksia, joita hyökkääjät voivat käyttää hyväkseen. 
+	Päivitykset ja tietoturvakorjaukset on tärkeää asentaa ajantasaisesti.
+
+On tärkeää pitää SSH-ympäristö turvallisena ja suojata sitä haavoittuvuuksilta 
+seuraavilla toimenpiteillä:
+
+	Käytä vahvoja salausalgoritmeja ja avaimia, kuten RSA:n tai Ed25519:n avaimia.
+	
+	Suojaa yksityiset avaimet asianmukaisesti ja käytä vahvoja salasanoja.
+	
+	Rajoita SSH-palvelimen käyttöoikeuksia ja käytä vahvoja tunnistautumismenetelmiä.
+	
+	Päivitä SSH-palvelinohjelmisto säännöllisesti uusimpiin versioihin ja tietoturvakorjauksiin.
+	
+	Seuraa SSH-lokitietoja ja tunnista mahdolliset epäilyttävät toiminnot tai hyökkäykset.
+	
+	Harkitse SSH-palvelimen suojaamista palomuurilla tai käyttämällä SSH-bastion-isäntää.
+	
+	Noudattamalla näitä ohjeita ja pitämällä SSH-ympäristö päivitettynä, voit minimoida 
+	SSH-haavoittuvuuksien riskit ja lisätä järjestelmäsi turvallisuutta.
+	
+SSH-protokollan tunnetut hyökkäykset
+	
+	Tässä on muutamia tunnettuja SSH-protokollaan liittyviä hyökkäyksiä:
+
+	Brute force -hyökkäykset: 
+	
+	Hyökkääjä yrittää arvata SSH-käyttäjän salasanaa toistuvasti käyttäen erilaisia 
+	salasanayhdistelmiä. Tämä hyökkäys voidaan torjua käyttämällä vahvoja salasanoja ja 
+	rajoittamalla salasanan arvaamisyrityksiä esimerkiksi käyttämällä salasanojen 
+	lukituksia tai käyttäjän lukitsemista tietyksi ajaksi liian monta epäonnistunutta 
+	yritystä.
+
+	Salasanan tietojenkalastelu: 
+	
+	Hyökkääjä pyrkii huijaamaan SSH-käyttäjää antamaan salasanansa väärennetyn 
+	SSH-sisäänkirjautumissivuston tai haitallisen linkin avulla. Tämän avulla hyökkääjä 
+	voi saada luvattoman pääsyn SSH-tiliin. Käyttäjien tulisi olla tietoisia tietojen-
+	kalasteluhuijauksista ja tarkistaa aina SSH-yhteyden aitouden.
+
+	Man-in-the-Middle (MITM) -hyökkäykset: 
+	
+	Hyökkääjä asettuu väliin SSH-yhteyden aikana ja sieppaa tiedonsiirron. Tämä voi 
+	tapahtua, jos SSH-palvelimen avainta ei ole tallennettu käyttäjän SSH-avainten 
+	tunnettujen isäntien tiedostoon (known_hosts). Tämän vuoksi SSH-yhteyden luotettavuus 
+	on tärkeää, ja avainten varmistaminen ja tarkistaminen ovat suositeltavia käytäntöjä.
+
+	SSH-protokollan versiohaavoittuvuudet: 
+	
+	SSH-protokollaan liittyy ajoittain haavoittuvuuksia, jotka voivat mahdollistaa 
+	hyökkääjän pääsyn järjestelmään tai tiedonsiirron luvattoman tarkkailun. 
+	SSH-palvelimen ja -asiakkaan päivittäminen ajan tasalle ja turvapäivitysten asentaminen 
+	on tärkeää, jotta näitä haavoittuvuuksia voidaan torjua.
+
+	Avaintenkalastelu: 
+	
+	Hyökkääjä yrittää saada haltuunsa SSH-yhteyden avaimet, jolloin hän voi saada luvattoman 
+	pääsyn SSH-palvelimelle tai väärentää SSH-liikennettä. Tämän välttämiseksi SSH-avaimia 
+	on säilytettävä turvallisesti ja niiden käyttöä on valvottava huolellisesti.	
+
+Yhteenveto
+
+	SSH on olennainen osa tietoturvallista etäkäyttöä ja tiedostojen siirtoa verkossa. 
+	Sen salausominaisuudet ja käyttäjätunnistus tekevät siitä luotettavan protokollan 
+	herkkien tietojen siirtoon. SSH:n avulla voit hallita etäkoneita ja suorittaa 
+	tiedostojen siirtoa turvallisesti.
+	
+	SSH on turvallinen protokolla etäkäyttöön ja tiedostojen siirtoon verkon yli. 
+	Wiresharkin avulla voit kaapata ja analysoida SSH-liikennettä, mikä auttaa 
+	ymmärtämään protokollan toimintaa ja tunnistamaan mahdollisia tietoturvaan liittyviä 
+	seikkoja. Ymmärtämällä SSH:n lähetys- ja vastaanottosatamat voit konfiguroida oikeat 
+	portit SSH-yhteyksille tai havaita epätavallista liikennettä verkossa.
+	
