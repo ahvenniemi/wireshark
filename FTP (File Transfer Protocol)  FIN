@@ -1,0 +1,90 @@
+FTP (File Transfer Protocol) 
+
+Johdanto:
+
+	FTP (File Transfer Protocol) on yksi vanhimmista ja yleisimmin käytetyistä 
+	tiedostojen siirtoprotokollista internetissä. Tässä dokumentissa tarkastelemme 
+	FTP:n toimintaa, sen käyttöä sekä liikenteen kaappaamista ja analysointia 
+	Wiresharkin avulla.
+
+Perusteet:
+
+	FTP toimii asiakas-palvelin-arkkitehtuurin periaatteella, jossa asiakasohjelma 
+	pyytää palvelimelta tiedostoja tai lähettää niitä palvelimelle. FTP käyttää 
+	kahdenlaista kanavaa tiedostojen siirtoon: ohjauskanavaa (control channel) ja 
+	tietokanavaa (data channel). Ohjauskanava vastaa käskyjen ja vastausten 
+	välittämisestä, kun taas tietokanava käytetään itse tiedostojen siirtoon.
+
+Tärkeimmät ominaisuudet:
+
+	FTP tarjoaa erilaisia toimintoja tiedostojen hallintaan ja siirtoon. Se sisältää 
+	muun muassa tiedostojen lataamisen ja lähettämisen, kansioiden luomisen, tiedostojen 
+	poistamisen ja nimeämisen sekä tiedostojen järjestelmätiedon tarkastelun. Näiden 
+	toimintojen avulla FTP mahdollistaa tehokkaan tiedostojen siirron verkon yli.
+
+Käyttö:
+
+	FTP:ä käytetään laajasti eri tarkoituksiin, kuten tiedostojen jakamiseen, 
+	verkkosivustojen päivityksiin ja varmuuskopiointiin. Se on erityisen hyödyllinen 
+	silloin, kun tarvitaan luotettavaa ja tehokasta tapaa siirtää suuria tiedostoja tai 
+	suuri määrä tiedostoja verkossa.
+
+Lähetys- ja vastaanottosatamat:
+
+	FTP käyttää oletusarvoisesti tiettyjä porteja tiedonsiirtoon. Ohjauskanava käyttää 
+	TCP-porttia 21, kun taas aktiivisessa tiedonsiirrossa käytetään TCP-porttia 20 lähetystä 
+	varten ja dynaamisesti määriteltyä paluuliikenteen porttia. Passiivisessa tiedonsiirrossa 
+	asiakas luo tietokanavalle dynaamisen portin palvelimelle.
+
+Käytä Wiresharkia -liikenteen kaappaamiseen ja analysointiin seuraavilla tavoilla:
+
+	Wireshark on suosittu verkkoanalyysityökalu, joka mahdollistaa liikenteen kaappaamisen 
+	ja analysoinnin. Voit käyttää Wiresharkia seuraavilla tavoilla FTP-liikenteen 
+	analysointiin:
+
+	Valitse verkko, jonka liikennettä haluat seurata.
+
+	Aseta Wireshark kuuntelemaan liikennettä valitussa verkossa.
+
+	Suodata liikenne, jotta näet vain FTP-liikenteen.
+
+	Analysoi kaapatun liikenteen paketteja ja niiden sisältöä.
+
+Haavoittuvuudet:
+
+	FTP:llä on joitain tunnettuja haavoittuvuuksia, jotka voivat altistaa tiedonsiirron 
+	turvallisuusriskeille. Näitä haavoittuvuuksia ovat muun muassa heikot salausmenetelmät, 
+	tietojen kalastelu, passiivisen tilan huijaaminen ja anonyymin käytön mahdollistaminen. 
+	On tärkeää olla tietoinen näistä haavoittuvuuksista ja toteuttaa asianmukaiset 
+	turvallisuuskäytännöt FTP-ympäristössä.
+
+Protokollan tunnetut hyökkäykset:
+
+	FTP on altis erilaisille hyökkäyksille, kuten man-in-the-middle -hyökkäyksille, 
+	brute force -hyökkäyksille, anonyymeille FTP-hyökkäyksille ja tiedostojen luvattomalle 
+	pääsylle. Nämä hyökkäykset voivat aiheuttaa tietoturvariskejä ja mahdollistaa luvattoman 
+	pääsyn tai tiedostojen väärinkäytön. On tärkeää ymmärtää nämä hyökkäykset ja toteuttaa 
+	asianmukaiset suojatoimenpiteet FTP-ympäristössä.
+
+Yhteenveto:
+
+	FTP on laajalti käytetty tiedostojen siirtoprotokolla, mutta se sisältää myös 
+	haavoittuvuuksia, jotka voivat altistaa tiedonsiirron turvallisuusriskeille. 
+	Liikenteen kaappaaminen ja analysointi Wiresharkin avulla voi auttaa havaitsemaan 
+	mahdollisia haavoittuvuuksia ja hyökkäyksiä. On tärkeää toteuttaa asianmukaiset 
+	turvallisuuskäytännöt ja harkita vaihtoehtoisia, turvallisempia tiedostonsiirtoprotokollia, 
+	kun suunnitellaan tiedonsiirtoa verkossa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

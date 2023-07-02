@@ -1,0 +1,71 @@
+FTP (File Transfer Protocol)
+
+Introduction:
+
+	FTP (File Transfer Protocol) is one of the oldest and most commonly used file 
+	transfer protocols on the internet. In this document, we will examine the operation 
+	of FTP, its usage, and how to capture and analyze its traffic using Wireshark.
+
+Basics:
+
+	FTP operates on a client-server architecture, where the client program requests 
+	files from or sends files to the server. FTP uses two channels for file transfer: 
+	the control channel and the data channel. The control channel is responsible for 
+	transmitting commands and responses, while the data channel is used for actual file 
+	transfer.
+
+Key Features:
+
+	FTP provides various functions for file management and transfer. It includes features 
+	such as downloading and uploading files, creating directories, deleting and renaming 
+	files, and viewing file system information. These functions enable efficient file 
+	transfer over the network.
+
+Usage:
+
+	FTP is widely used for various purposes, such as file sharing, website updates, 
+	and backup. It is particularly useful when a reliable and efficient way of transferring 
+	large files or a large number of files over the network is needed.
+
+Transmission and Reception Ports:
+
+	FTP uses specific default ports for data transfer. The control channel uses TCP 
+	port 21, while active mode data transfer uses TCP port 20 for sending and a dynamically 
+	assigned port for return traffic. In passive mode data transfer, the client creates 
+	a dynamic port for the data channel on the server.
+
+Using Wireshark for Traffic Capture and Analysis:
+
+Wireshark is a popular network analysis tool that allows capturing and analyzing traffic. 
+You can use Wireshark in the following ways to analyze FTP traffic:
+
+	Select the network whose traffic you want to monitor.
+
+	Set up Wireshark to capture traffic on the chosen network.
+	
+	Apply filters to view only FTP traffic.
+	
+	Analyze the captured packets and their contents.
+
+Vulnerabilities:
+
+	FTP has known vulnerabilities that can expose security risks in data transfer. 
+	These vulnerabilities include weak encryption methods, data phishing, passive mode 
+	deception, and enabling anonymous access. It is important to be aware of these 
+	vulnerabilities and implement appropriate security practices in an FTP environment.
+
+Known Attacks on the Protocol:
+
+	FTP is susceptible to various attacks, such as man-in-the-middle attacks, brute 
+	force attacks, anonymous FTP attacks, and unauthorized access to files. These attacks 
+	can pose security risks and allow unauthorized access or misuse of files. It is important 
+	to understand these attacks and implement appropriate security measures in an FTP 
+	environment.
+
+Summary:
+
+	FTP is a widely used file transfer protocol, but it also has vulnerabilities that can 
+	expose security risks in data transfer. Capturing and analyzing traffic using Wireshark 
+	can help identify potential vulnerabilities and attacks. It is important to implement 
+	appropriate security practices and consider alternative, more secure file transfer 
+	protocols when planning file transfer over the network.
