@@ -1,0 +1,164 @@
+IPv6 (Internet Protocol version 6)
+
+Introduction:
+
+	IPv6 (Internet Protocol version 6) is the next-generation internet protocol designed to 
+	replace IPv4. It has been developed to meet the growing need for IP addresses and provide 
+	improvements in security, traffic management, and network expansion.
+
+Basics:
+
+	IPv6 operates at the same network layer as IPv4 and its purpose is to enable communication 
+	between devices in an IP network. IPv6 uses 128-bit IP addresses, offering a significantly 
+	larger address space compared to IPv4's 32-bit addresses.
+
+Operation:
+
+	IPv6 operates on similar principles to IPv4. It breaks down data packets into smaller units 
+	called IPv6 packets. IPv6 packets contain the source and destination IPv6 addresses, as well 
+	as other information such as protocol and checksum fields.
+
+Key Features:
+
+	Expanded Address Space:
+
+	IPv6 uses 128-bit addresses, providing an enormous number of possible addresses to meet the 
+	needs of current and future devices.
+
+	Simplified Addressing:
+
+	IPv6 introduces a clearer and simpler address system, making address management and formatting 
+	easier.
+
+	Autoconfiguration:
+
+	IPv6 supports automatic IP address assignment, simplifying the process of connecting new 
+	devices to the network.
+
+Security:
+
+	IPv6 includes built-in security features such as IPsec support, allowing for encryption of 
+	traffic and improved security.
+
+	IPv6 is the future standard for internet protocol and its usage is continuously growing. 
+	It is designed to support a wide range of applications and devices, including smart devices, 
+	IoT systems, and large-scale network infrastructures. IPv6 is supported by both internet 
+	service providers and network device manufacturers.
+
+Summary - Protocol Usage:
+
+	Transmission and Reception Ports:
+
+	IPv6 packets do not have separate ports as they operate at the same network layer as IPv4. 
+	Sending and receiving packets relies on IPv6 addresses and routing information.
+
+Vulnerabilities:
+
+	IPv6 protocol has been designed to take into account security considerations and includes 
+	improvements compared to IPv4. However, IPv6 can also have its own vulnerabilities, which can affect 
+	routing, traffic encryption, or IPsec implementation.
+
+	Transmission and Reception Ports:
+
+	IPv6 packets do not have separate port numbers like the IPv4 protocol. Instead, sending and 
+	receiving IPv6 packets relies on IP addresses and routing information. IPv6 packets contain 
+	source and destination addresses that define the sender and recipient.
+
+Using Wireshark in the following ways:
+
+	Traffic Filtering:
+
+	You can filter captured traffic based on different criteria such as source or destination address, 
+	protocol, or port number. This helps you focus on specific traffic and analyze it in more detail. 
+	There are plenty of filtering options, and you can find additional information on creating different 
+	filters in Wireshark's documentation.
+
+	Traffic Analysis:
+
+	Wireshark displays captured traffic in detail, including transmitted and received IPv6 packets. 
+	You can inspect packet contents, source and destination addresses, protocol fields, and other 
+	data elements. Wireshark also provides various statistics, graphical views, and tools for traffic 
+	analysis and troubleshooting.
+
+	Filter IPv6 Packets:
+
+	You can filter captured network traffic to display only IPv6 packets. Use the capture filter 
+	"ip6" or "ipv6" to see only IPv6 traffic.
+
+	Filter by Source or Destination Address:
+
+	You can filter network traffic to display only IPv6 packets coming from or going to a specific 
+	source or destination address. Use the capture filter "ipv6.src == <address>" or "ipv6.dst 
+	== <address>", replacing <address> with the desired IPv6 address.
+
+	Filter by Protocol:
+
+	You can filter network traffic to display only IPv6 packets that use a specific protocol (e.g., 
+	ICMPv6 or TCP). Use the capture filter "ipv6.proto == <protocol>", replacing <protocol> with the 
+	desired protocol number.
+
+	Combined Capture Filters:
+
+	You can combine different capture filters using logical operators such as AND, OR, and NOT. 
+	This allows for creating more complex filters, such as filtering IPv6 packets of a specific 
+	protocol from a specific source address.
+
+	Using Wireshark with Default Ports:
+
+	IPv6 packets do not have separate default port numbers because they operate at the same 
+	network layer as IPv4. Port numbers are related to the application layer, which is higher 
+	up in the protocol stack. Port numbers are defined by the application protocol and are not 
+	part of the IPv6 packets themselves.
+
+	IPv6 protocol is designed with better security compared to IPv4. However, IPv6 can still 
+	have its own vulnerabilities. These may include address disclosures, ICMP attacks, traffic 
+	interception, and misuse of routing. It is important to keep IPv6 networks and devices 
+	updated and use appropriate security practices to protect the network.
+
+Known Attacks on the Protocol:
+
+	Some of the known attacks on the IPv6 protocol include packet sniffing (traffic interception), 
+	address spoofing, routing attacks, and ICMP attacks. These attacks can be carried out using 
+	various methods, and their purposes can range from network congestion and data theft to 
+	enabling malicious activities.
+
+	IPv6 has known attacks that can target network traffic, devices, or the protocol's operation. 
+	Some examples of known IPv6 attacks include traffic interception, address spoofing, routing attacks, 
+	and ICMP attacks.
+
+	ICMPv6 Attacks:
+
+	An attacker can send forged ICMPv6 (Internet Control Message Protocol version 6) packets to the 
+	target system. Such attacks can disrupt network traffic, such as in denial-of-service attacks 
+	(DDoS).
+
+	Neighbor Discovery Protocol (NDP) Attacks:
+
+	NDP is the routing protocol used in IPv6 networks, enabling device discovery and network 
+	configuration. An attacker can manipulate NDP messages by forging device identities or 
+	source addresses, causing harm to network traffic or enabling other types of attacks.
+
+	Router Advertisement (RA) Attacks:
+
+	RA messages are part of the NDP protocol and are used for distributing routing information 
+	in IPv6 networks. An attacker can send forged RA messages in the network, leading to incorrect 
+	routing of devices or facilitating traffic interception.
+
+	IPv6 Fragmentation Attacks:
+
+	An attacker can send a large number of small IPv6 fragments intended to be reassembled into 
+	the original packet at the receiving end. Such attacks can deplete resources in the receiving 
+	system as it has to process a large number of fragments.
+
+	Rogue Router Attacks:
+
+	In this attack, an attacker introduces a forged router into the network, aiming to redirect 
+	network traffic to itself or perform other malicious actions. This can result in degraded network 
+	usability or lead to traffic interception.
+
+Summary:
+
+	IPv6 is the next-generation internet protocol that offers a larger address space, improved security, 
+	and other enhancements compared to IPv4. It is designed to meet the needs of current and future network 
+	traffic. The adoption of IPv6 is steadily increasing, and attention must be given to its security. 
+	Wireshark is a valuable tool for analyzing IPv6 network traffic and identifying vulnerabilities.

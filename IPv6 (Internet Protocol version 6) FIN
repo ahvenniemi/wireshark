@@ -1,0 +1,166 @@
+IPv6 (Internet Protocol version 6)
+
+Johdanto:
+
+IPv6 (Internet Protocol version 6) on seuraavan sukupolven internetprotokolla, joka on kehitetty korvaamaan 
+IPv4-protokolla. Se on suunniteltu vastaamaan kasvavaan IP-osoitteiden tarpeeseen ja tarjoamaan parannuksia 
+tietoturvaan, liikenteen hallintaan ja verkkojen laajentamiseen.
+
+Perusteet:
+
+IPv6 toimii samalla verkkokerroksella kuin IPv4 ja sen tehtävänä on mahdollistaa laitteiden viestintä IP-verkossa. 
+IPv6 käyttää 128-bittisiä IP-osoitteita, mikä tarjoaa huomattavasti suuremman määrän osoitteita kuin IPv4:n 
+32-bittiset osoitteet.
+
+Toiminta:
+
+IPv6:n toiminta perustuu samoihin periaatteisiin kuin IPv4:n. Se jakaa tietopaketit pienempiin paketteihin, 
+joita kutsutaan IPv6-paketeiksi. IPv6-paketit sisältävät lähettäjän ja vastaanottajan IPv6-osoitteet sekä muita 
+tietoja, kuten protokolla- ja tarkistussummakentät.
+
+Tärkeimmät ominaisuudet:
+
+	Laajennettu osoitetila: 
+
+	IPv6 käyttää 128-bittisiä osoitteita, mikä tarjoaa valtavan määrän mahdollisia osoitteita ja vastaa nykyisten 
+	ja tulevien laitteiden tarpeisiin.
+	
+	Yksinkertaistetut osoitteet: 
+	
+	IPv6:ssa on selkeämpi ja yksinkertaisempi osoitejärjestelmä, joka helpottaa osoitteiden hallintaa ja muotoilua.
+
+	Auto-asetus: 
+	
+	IPv6 tukee automaattista IP-osoitteiden asetusta, mikä helpottaa uusien laitteiden liittämistä verkkoon.
+
+	Tietoturva: 
+	
+	IPv6 sisältää sisäänrakennettuja tietoturvatoimintoja, kuten IPsec-tuen, joka mahdollistaa tietoliikenteen 
+	salauksen ja tietoturvan parantamisen.
+
+Käyttö:
+	
+	IPv6 on tulevaisuuden standardi internetprotokollana, ja sen käyttö kasvaa jatkuvasti. Se on suunniteltu 
+	tukemaan monenlaisia sovelluksia ja laitteita, kuten älylaitteita, IoT-järjestelmiä ja suuria 
+	verkkoinfrastruktuureja. IPv6:tta tukevat sekä internetpalveluntarjoajat että verkkolaitteiden valmistajat.
+
+	Yhteenveto - protokollan käytöstä:
+
+	Lähetys- ja vastaanottosatamat: 
+	
+	IPv6-paketeilla ei ole erillisiä portteja, koska ne toimivat samalla verkkokerroksella kuin IPv4. 
+	Pakettien lähettäminen ja vastaanottaminen perustuu IPv6-osoitteisiin ja reititystietoihin.
+	
+ 
+
+Haavoittuvuudet:
+	
+	IPv6-protokolla on suunniteltu ottamaan huomioon tietoturva ja sisältää parannuksia verrattuna IPv4:ään. 
+	Kuitenkin myös IPv6:lla voi olla omat haavoittuvuutensa, jotka voivat kohdistua esimerkiksi reititykseen, 
+	liikenteen salaukseen tai IPsec-toteutukseen.
+
+	Lähetys- ja vastaanottosatamat:
+	
+	IPv6-paketeilla ei ole erillisiä porttinumeroita, kuten IPv4-protokollalla. Sen sijaan IPv6-pakettien 
+	lähettäminen ja vastaanottaminen perustuu IP-osoitteisiin ja reititystietoihin. IPv6-pakettiin sisältyvät 
+	lähde- ja kohdeosoitteet, jotka määrittävät lähettäjän ja vastaanottajan.
+
+Wiresharkin käyttö seuraavilla tavoilla:
+
+	Liikenteen suodattaminen: 
+	
+	Voit suodattaa kaapattua liikennettä eri kriteereillä, kuten lähde- tai kohdeosoitteella, protokollalla 
+	tai porttinumerolla. Tämä auttaa sinua keskittymään tiettyyn liikenteeseen ja analysoimaan sitä tarkemmin. 
+	Suodatusmahdollisuuksia on runsaasti, ja voit tarkastella Wiresharkin dokumentaatiosta lisätietoja 
+	erilaisten suodatusten luomiseen.
+
+	Liikenteen analysointi: 
+	
+	Wireshark näyttää kaapatun liikenteen yksityiskohtaisesti, mukaan lukien 
+	lähetetyt ja vastaanotetut IPv6-paketit. Voit tarkastella pakettien sisältöä, lähde- ja kohdeosoitteita, 
+	protokollakenttiä ja muita tietoelementtejä. Wireshark tarjoaa myös erilaisia tilastoja, graafisia näkymiä ja 
+	työkaluja liikenteen analysointiin ja vianetsintään.
+	
+	Suodata IPv6-paketit: 
+	
+	Voit suodattaa kaapatun verkkoliikenteen näyttämään vain IPv6-paketteja. Käytä rajausfiltteriä "ip6" tai 
+	"ipv6" nähdäksesi vain IPv6-liikenteen.
+
+	Suodata lähde- tai kohdeosoitteen perusteella: 
+
+	Voit suodattaa verkkoliikenteen näyttämään vain tietystä lähde- tai kohdeosoitteesta tulevat IPv6-paketit. 
+	Käytä rajausfiltteriä "ipv6.src == <osoite>" tai "ipv6.dst == <osoite>", korvaten <osoite> haluamallasi IPv6
+	-osoitteella.
+
+	Suodata protokollan perusteella: 
+	
+	Voit suodattaa verkkoliikenteen näyttämään vain tietyn protokollan (esim. ICMPv6 tai TCP) käyttävät 
+	IPv6-paketit. Käytä rajausfiltteriä "ipv6.proto == <protokolla>", korvaten <protokolla> haluamallasi 
+	protokollan numerolla.
+
+	Kombinoidut rajausfiltterit: 
+	
+	Voit yhdistää erilaisia rajausfilttereitä käyttämällä loogisia operaattoreita, kuten AND, OR ja NOT. 
+	Tämä mahdollistaa monimutkaisempien rajauksien luomisen, esimerkiksi suodattamalla tietyn protokollan 
+	IPv6-paketit tietyltä lähdeosoitteelta.
+
+	Wiresharkin käyttö oletusporttien kanssa:
+	
+	IPv6-paketeilla ei ole erillisiä oletusporttinumeroita, koska ne toimivat samalla verkkokerroksella 
+	kuin IPv4. Porttinumerot liittyvät sovelluskerrokseen, joka on ylemmällä tasolla protokolla-pinossa. 
+	Porttinumerot määritellään sovellusprotokollissa ja ne eivät ole osa itse IPv6-paketteja.
+
+Haavoittuvuudet:
+	
+	IPv6-protokollalla on suunniteltu parempi tietoturva verrattuna IPv4:ään. Kuitenkin myös IPv6:lla voi olla 
+	omat haavoittuvuutensa. Näitä voivat olla esimerkiksi osoitteiden paljastuminen, ICMP-hyökkäykset, 
+	tietoliikenteen sieppaus ja reitityksen väärinkäyttö. On tärkeää pitää IPv6-verkot ja laitteet päivitettyinä 
+	ja käyttää asianmukaisia tietoturvakäytäntöjä suojaamaan verkkoa.
+
+Protokollan tunnetut hyökkäykset:
+
+	IPv6-protokollan tunnetuista hyökkäyksistä joitain ovat tietoliikenteen sieppaus (packet sniffing), 
+	osoitteen väärentäminen (address spoofing), reitityshyökkäykset (routing attacks) ja ICMP-hyökkäykset 
+	(ICMP attacks). Näitä hyökkäyksiä voidaan toteuttaa erilaisin menetelmin, ja niiden tarkoituksena voi 
+	olla verkon kuormittaminen, tietojen varastaminen tai haitallisen toiminnan mahdollistaminen.
+
+	IPv6:lla on tunnettuja hyökkäyksiä, jotka voivat kohdistua tietoliikenteeseen, laitteisiin tai 
+	protokollan toimintaan. Joitakin esimerkkejä tunnetuista IPv6-hyökkäyksistä ovat tietoliikenteen 
+	sieppaus, osoitteen väärentäminen, reitityshyökkäykset ja ICMP-hyökkäykset.
+	
+	ICMPv6-hyökkäykset: 
+	
+	Hyökkääjä voi lähettää väärennettyjä ICMPv6-paketteja (Internet Control Message Protocol version 6) 
+	kohdejärjestelmälle. Tällaiset hyökkäykset voivat aiheuttaa haittaa verkkoliikenteelle, esimerkiksi 
+	palvelunestohyökkäyksissä (DDoS).
+
+	Neighbor Discovery Protocol (NDP) -hyökkäykset: 
+	
+	NDP on IPv6-verkkojen reititysprotokolla, joka mahdollistaa laitteiden löytämisen ja verkon konfiguraation. 
+	Hyökkääjä voi manipuloida NDP-viestejä väärentämällä laite-identiteettejä tai lähdeosoitteita, mikä voi 
+	aiheuttaa haittaa verkkoliikenteelle tai mahdollistaa muiden hyökkäysten suorittamisen.
+
+	Router Advertisement (RA) -hyökkäykset: 
+	
+	RA-viestit ovat osa NDP-protokollaa ja niitä käytetään reititystiedon jakamiseen IPv6-verkoissa. 
+	Hyökkääjä voi lähettää väärennettyjä RA-viestejä verkossa, mikä voi aiheuttaa laitteiden väärän 
+	reitityksen tai johtaa tietoliikenteen sieppaukseen.
+
+	IPv6 Fragmentation-hyökkäykset: 
+	
+	Hyökkääjä voi lähettää suuren määrän pieniä IPv6-fragmentteja, jotka on tarkoitus koota vastaanottajapäässä 
+	alkuperäiseksi paketiksi. Tällaiset hyökkäykset voivat aiheuttaa resurssien loppumista 
+	vastaanottajajärjestelmässä, kun se joutuu käsittelemään suurta määrää fragmentteja.
+
+	Rogue Router-hyökkäykset: 
+	
+	Tässä hyökkäyksessä hyökkääjä asettaa verkkoon väärennetyn reitittimen, joka pyrkii ohjaamaan verkkoliikennettä 
+	itseensä tai suorittamaan muita haitallisia toimintoja. Tämä voi aiheuttaa verkon käytettävyyden heikkenemistä 
+	tai johtaa tietoliikenteen sieppaukseen.
+
+Yhteenveto:
+
+	IPv6 on seuraavan sukupolven internetprotokolla, joka tarjoaa suuremman osoitetilan, paremman tietoturvan 
+	ja muita parannuksia verrattuna IPv4:ään. Se on suunniteltu vastaamaan nykyisen ja tulevan verkkoliikenteen 
+	tarpeisiin. IPv6:n käyttö kasvaa jatkuvasti, ja sen tietoturvaan on kiinnitettävä huomiota. Wireshark on 
+	hyödyllinen työkalu IPv6-verkkoliikenteen analysointiin ja haavoittuvuuksien tunnistamiseen.
