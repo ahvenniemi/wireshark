@@ -1,0 +1,204 @@
+IMAP (Internet Message Access Protocol)
+
+Johdanto
+
+	IMAP (Internet Message Access Protocol) on standardoitu protokolla sähköpostiviestien 
+	hallintaan ja vastaanottamiseen sähköpostipalvelimilta. Se tarjoaa kehittyneempiä 
+	toiminnallisuuksia verrattuna POP3-protokollaan ja mahdollistaa sähköpostiviestien 
+	joustavan hallinnan eri laitteilla ja sähköpostiohjelmilla.
+
+IMAP:n toiminta
+
+	IMAP perustuu asiakas-palvelin-malliin, jossa sähköpostin vastaanottaja toimii asiakkaana 
+	ja sähköpostipalvelin toimii palvelimena. Käyttäjä muodostaa yhteyden palvelimeen 
+	IMAP-protokollan avulla ja voi hallinnoida sähköpostiviestejä suoraan palvelimella. 
+	IMAP mahdollistaa sähköpostiviestien synkronoinnin eri laitteiden välillä, jolloin 
+	viestit näkyvät samanlaisina kaikilla laitteilla.
+
+IMAP:n käyttö
+
+	IMAP:n käyttö edellyttää sähköpostiohjelmaa tai asiakasohjelmaa, joka tukee IMAP-protokollaa 
+	ja pystyy muodostamaan yhteyden sähköpostipalvelimeen. Käyttäjän on yleensä määritettävä 
+	sähköpostiohjelmaan tarvittavat tiedot, kuten palvelimen nimi tai IP-osoite, porttinumero, 
+	käyttäjänimi ja salasana.
+
+Seuraavassa on yleinen prosessi sähköpostiviestien hallitsemiseksi IMAP:n avulla:
+
+	Avaa sähköpostiohjelma tai asiakasohjelma.
+	
+	Määritä sähköpostiohjelmaan tarvittavat tiedot, kuten palvelimen nimi tai IP-osoite, 
+	porttinumero, käyttäjänimi ja salasana.
+	
+	Muodosta yhteys sähköpostipalvelimeen IMAP-protokollan avulla.
+	
+	Näet sähköpostiviestit suoraan palvelimella ja voit lukea, poistaa, siirtää ja 
+	hallinnoida niitä.
+	
+	Tehdyt muutokset sähköpostiviesteihin, kuten lukeminen tai poistaminen, synkronoidaan 
+	palvelimelle, jolloin ne näkyvät samalla tavalla kaikilla laitteilla.
+
+IMAP:n tärkeimmät ominaisuudet:
+
+	IMAP tarjoaa useita tärkeitä ominaisuuksia sähköpostiviestien hallinnassa:
+
+	Sähköpostiviestien synkronointi: 
+	
+	IMAP mahdollistaa viestien synkronoinnin eri laitteiden välillä, jolloin viestit ovat 
+	aina ajantasaisia kaikilla laitteilla.
+	
+	Kansiojen hallinta: 
+	
+	IMAP-protokolla tukee kansiorakennetta, joka mahdollistaa viestien järjestämisen 
+	eri kansioihin ja alikansioihin. Monipuoliset hakuominaisuudet: IMAP tarjoaa laajat 
+	hakuominaisuudet, joiden avulla voi etsiä ja suodattaa sähköpostiviestejä eri kriteerien 
+	perusteella.
+	
+	Offline-lukeminen ja viestien lataaminen tarpeen mukaan: 
+	
+	IMAP-protokolla mahdollistaa sähköpostiviestien lataamisen tarpeen mukaan, jolloin viestejä voi 
+	lukea offline-tilassa ilman jatkuvaa yhteyttä palvelimeen.
+
+IMAP:n turvallisuus ja haavoittuvuudet:
+
+	IMAP käyttää yleensä salattua yhteyttä (IMAPS), joka käyttää SSL- tai TLS-salausta. 
+	Tämä tarjoaa tietoturvaa viestien siirrolle sähköpostipalvelimen ja 
+	käyttäjän laitteen välillä. On tärkeää varmistaa, että käytetään turvallista yhteyttä 
+	IMAP:n käytössä.
+
+	Kuten kaikissa protokollissa, IMAP:lla voi olla myös tietoturvaan liittyviä haavoittuvuuksia.
+	Tällaisia haavoittuvuuksia voivat olla esimerkiksi tietomurrot, väärinkäytökset tai 
+	hyökkäykset, jotka kohdistuvat IMAP-palvelimeen tai käyttäjän sähköpostitileihin. 
+	Tietoturvasta huolehtiminen, kuten vahvojen salasanojen 
+	käyttäminen ja ohjelmistojen päivittäminen, on tärkeää IMAP:n käytössä.
+
+IMAP-protokollan käyttö Wiresharkin avulla:
+
+	IMAP (Internet Message Access Protocol) on sähköpostiviestien hallintaan käytettävä 
+	protokolla, joka tarjoaa kehittyneempiä toiminnallisuuksia verrattuna POP3:een. Voit käyttää 
+	Wireshark-ohjelmaa IMAP-liikenteen kaappaamiseen ja analysointiin seuraavilla tavoilla:
+
+	Aseta oikea suodatin IMAP-liikenteen kaappaamiseksi: IMAP käyttää yleensä porttia 143 
+	ilman SSL/TLS-salausta ja porttia 993 SSL/TLS-salauksella. 
+	
+	Voit asettaa suodattimen Wiresharkin suodatinkenttään seuraavasti:
+
+	IMAP ilman SSL/TLS-salausta: "imap.port == 143"
+	
+	IMAP SSL/TLS-salauksella: "imap.port == 993"
+	
+	Huomaa, että porttinumerot voivat vaihdella eri ympäristöissä tai konfiguraatioissa. 
+	Jos IMAP-palvelin käyttää muita kuin edellä mainittuja porttinumeroita, määritä 
+	suodatin vastaavasti.
+
+	Aloita liikenteen kaappaus: 
+	
+	Tarkastele kaapattua IMAP-liikennettä: Wireshark tallentaa kaapatun liikenteen paketteihin, 
+	joita voit tarkastella ja analysoida. Voit nähdä yksityiskohtia jokaisesta IMAP-paketista, 
+	kuten protokollan viestit, lähde- ja kohdeosoitteet, aikaleimat ja muut metatiedot. 
+	Voit myös tarkastella pakettien sisältöä, kuten IMAP-komentoja ja vastauksia.
+	
+IMAP haavottuvuudet:
+
+	IMAP (Internet Message Access Protocol) on sähköpostin vastaanotto- ja tallennusprotokolla, 
+	joka tarjoaa kehittyneempiä ominaisuuksia kuin POP3. Vaikka IMAP-protokolla itsessään ei ole 
+	erityisen haavoittuvainen, sen käyttöön liittyvät järjestelmät voivat altistua erilaisille 
+	haavoittuvuuksille. 
+	
+	Tässä on joitain tunnettuja IMAP-haavoittuvuuksia:
+
+	Salasanojen siirto salaamattomana: 
+	
+	IMAP-protokolla voi käyttää salaamatonta yhteyttä, mikä tarkoittaa, että käyttäjien 
+	salasanat siirtyvät verkossa salaamattomana. Tämä mahdollistaa niiden kaappaamisen 
+	ja käytön, mikä voi johtaa tietojenkalasteluun ja luvattomaan pääsyyn sähköpostitileille.
+
+	Man-in-the-Middle (MITM) -hyökkäykset: 
+	
+	IMAP-liikenne, kun se ei ole salattu, on altis MITM-hyökkäyksille. Hyökkääjä voi asettua 
+	väliin ja siepata tai muokata sähköpostitietoja, kuten käyttäjän tunnistetietoja tai 
+	sähköpostisisältöä.
+
+	Brute force -hyökkäykset: 
+	
+	Jos IMAP-palvelin ei rajoita salasanan arvaamista tai liian monta yritystä, se voi 
+	altistua brute force -hyökkäyksille. Hyökkääjä voi yrittää useita salasanoja saadakseen 
+	luvattoman pääsyn sähköpostitileille.
+
+	Haavoittuvat sähköpostiohjelmat: 
+	
+	IMAP:n haavoittuvuudet voivat liittyä myös käytettyihin sähköpostiohjelmiin tai niiden 
+	toteutuksiin. Jos sähköpostiohjelmassa on haavoittuvuuksia, ne voivat altistaa 
+	sähköpostitilin hyökkäyksille, kuten tietomurroille tai luvattomalle pääsylle.
+
+	Tietomurrot ja tietovuodot: 
+	
+	IMAP-palvelimet tai siihen liittyvät järjestelmät voivat altistua tietomurroille 
+	tai tietovuodoille, jotka voivat johtaa käyttäjien tietojen paljastumiseen. 
+	Tämä voi sisältää sähköposteja, liitteitä, käyttäjänimiä ja salasanoja.
+
+	IMAP:n turvaamiseksi on tärkeää toteuttaa asianmukaiset toimenpiteet, kuten:
+
+	Käytä SSL/TLS-salausta IMAP-yhteyden suojaamiseksi. IMAPS (IMAP Secure) -protokolla 
+	käyttää porttia 993 ja tarjoaa salatun yhteyden.
+
+	Varmista, että käytät vahvoja salasanoja ja kannustat käyttäjiä käyttämään 
+	monimutkaisia salasanoja.
+
+	Päivitä IMAP-palvelimen ohjelmistot säännöllisesti ja varmista, että käytössäsi on 
+	luotettava ja turvallinen toteutus.
+
+	Kouluta käyttäjät tunnistamaan haitalliset sähköpostit ja harjoittelemaan hyviä 
+	tietoturvakäytäntöjä sähköpostin käytössä.
+
+	Nämä toimenpiteet auttavat vähentämään IMAP-palvelimen haavoittuvuuksia ja 
+	parantavat sähköpostiliikenteen turvallisuutta.
+	
+IMAP tunnetut hyökkäykset:
+
+	Tunnettuja hyökkäyksiä, joita voidaan kohdistaa IMAP-protokollaa vastaan:
+
+	Salasanan väärinkäyttö: 
+	
+	Hyökkääjä voi yrittää arvata tai murtaa IMAP-käyttäjien salasanoja. He voivat 
+	käyttää brute-force- tai dictionary-hyökkäyksiä yrittäen löytää heikon 
+	salasanan ja saada pääsyn käyttäjän sähköpostitiliin.
+
+	Man-in-the-Middle (MITM) -hyökkäykset: 
+	
+	Hyökkääjä voi asettua väliin IMAP-yhteyden aikana ja siepata käyttäjän tunnistetiedot, 
+	kuten käyttäjänimen ja salasanan. Tämä voi tapahtua esimerkiksi avoimissa tai heikosti 
+	suojatuissa Wi-Fi-verkoissa.
+
+	Viestien sieppaus: 
+	
+	Hyökkääjä voi siepata IMAP-yhteyden aikana lähetettävät ja vastaanotettavat 
+	sähköpostiviestit. Tämä voi paljastaa arkaluonteista tietoa, kuten henkilökohtaisia 
+	tai liikesalaisuuksia.
+
+	Tietojenkalastelu (Phishing): 
+	
+	Hyökkääjä voi lähettää sähköposteja, jotka näyttävät aidoilta IMAP-viesteiltä, 
+	pyytäen käyttäjää paljastamaan henkilökohtaisia tietoja, kuten salasanoja tai 
+	luottokorttitietoja. Tämä voi johtaa identiteettivarkauksiin ja taloudellisiin 
+	tappioihin.
+
+	Tietoturva-aukot IMAP-palvelimessa: 
+	
+	IMAP-palvelinohjelmistoissa voi olla haavoittuvuuksia, jotka sallivat hyökkääjien 
+	saada luvattoman pääsyn järjestelmään tai siepata käyttäjien tietoja.
+
+Yhteenveto
+
+	IMAP on kehittyneempi protokolla sähköpostiviestien hallintaan ja vastaanottamiseen 
+	verrattuna POP3:een. Se tarjoaa käyttäjille mahdollisuuden synkronoida 
+	sähköpostiviestit eri laitteiden välillä ja hallinnoida viestejä suoraan palvelimella. 
+	IMAP tukee kansiorakennetta, monipuolisia hakuominaisuuksia ja tarjoaa 
+	mahdollisuuden ladata viestejä tarpeen mukaan offline-lukemista varten. 
+	IMAP:n turvallinen käyttö edellyttää salattua yhteyttä ja huolellista tietoturvasta 
+	huolehtimista.
+
+	Wireshark-ohjelmaa IMAP-liikenteen kaappaamiseen ja analysointiin määrittelemällä 
+	oikeat suodattimet IMAP:n porttinumeroiden perusteella. Kaapattu liikenne 
+	sisältää IMAP-pakettien tiedot, jotka voit tarkastella yksityiskohtaisesti 
+	Wiresharkissa. Muista noudattaa sovellettavia lakeja ja säännöksiä liikenteen 
+	kaappaamisessa.
