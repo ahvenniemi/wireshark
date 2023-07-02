@@ -116,7 +116,7 @@ Using Wireshark to Capture and Analyze Traffic:
 	Wireshark enables analysis of RTP sessions, where you can examine continuous RTP traffic load, delays, 
 	packet loss, and other statistical information.
 
-	Note that the RTP protocol can use different data streams (payload), such as audio or video, and the 
+	RTP protocol can use different data streams (payload), such as audio or video, and the 
 	ports for these data streams may vary between applications or servers. Therefore, it is important to 
 	know precisely which application or server you are analyzing to determine the correct port numbers 
 	and filters for capturing RTP traffic.
