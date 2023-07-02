@@ -19,3 +19,29 @@ and accurate details.
 By accessing and using the content on this GitHub page, you acknowledge and agree to the above disclaimer.
 
 # wireshark
+# Basics
+# NetworkManagement
+# ErrorReporting
+# Diagnostics
+# MessageTypes
+# Usage
+# TrafficAnalysis
+# Vulnerabilities
+# Attacks
+# InternetProtocols
+# NetworkManagement
+# ErrorReporting
+# Diagnostics
+# IPPacket
+# RoutingInformation
+# Ping
+# TrafficMonitoring
+# FirewallTesting
+# NetworkTroubleshooting
+# PortNumbers
+# PacketAnalysis
+# ProtocolSecurity
+# DenialOfService
+# NetworkOverload
+# ResourceExhaustion
+# SystemCrash
