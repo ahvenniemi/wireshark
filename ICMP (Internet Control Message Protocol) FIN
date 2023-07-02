@@ -1,0 +1,91 @@
+ICMP (Internet Control Message Protocol)
+
+	ICMP Internet-protokollapinoon kuuluva protokolla, jota käytetään verkkojen hallintaan, 
+	virheilmoituksiin ja diagnoosiin. Se toimii yhdessä IP-protokollan kanssa ja 
+	mahdollistaa verkkolaitteiden välisen viestinnän.
+
+Johdanto:
+
+	ICMP on suunniteltu tarjoamaan tiedonsiirtoon liittyviä hallintatoimintoja, kuten verkon 
+	tilan tarkistusta, virheilmoituksia ja reititystietojen päivityksiä. Se käyttää 
+	IP-paketteja välittämään hallintaviestejä ja vastauksia.
+
+Perusteet:
+
+	ICMP toimii IP-protokollan päällä ja käyttää IP-pakettien muotoa. Se sisältää erilaisia 
+	tietotyyppejä, kuten virheilmoituksia, kohdistamattomia pyyntö-vastausviestejä ja 
+	reititystietojen vaihtoa koskevia viestejä.
+
+Toiminta:
+
+	ICMP-viestit ovat yksisuuntaisia ja niitä käytetään ilmoittamaan verkon laitteille 
+	tapahtuneista virheistä tai pyytämään tietoa. Esimerkiksi ICMP-viestit voivat sisältää 
+	tiedon, että reititin ei löydä määränpäätä, tai pyynnön palauttaa ping-vastaus.
+
+Tärkeimmät ominaisuudet:
+
+	ICMP-viestit sisältävät erityyppisiä viestityyppejä, kuten Echo Request/Reply (ping), 
+	Destination Unreachable, Time Exceeded, Redirect, jne. ICMP-viestit voivat myös sisältää 
+	lisätietoja, kuten lähdeosoitteen ja sekvenssinumeron.
+
+Käyttö:
+
+	ICMP-protokollaa käytetään laajasti verkkojen hallintaan ja diagnosointiin. Sitä 
+	käytetään mm. verkon vianmääritykseen, reitityksen hallintaan, palomuurin asetusten 
+	testaamiseen ja liikenteen valvontaan.
+
+	Yhteenveto protokollan käytöstä:
+	
+	ICMP-protokollaa käytetään verkkolaitteiden hallintaan ja viestien välittämiseen 
+	verkon eri osapuolten välillä. Se tarjoaa toiminnallisuuden, joka helpottaa verkon 
+	valvontaa, diagnostiikkaa ja virheiden korjausta.
+
+Lähetys- ja vastaanottosatamat:
+
+	ICMP (Internet Control Message Protocol) ei käytä perinteisiä portteja tiedonsiirtoon, 
+	kuten TCP ja UDP. Sen sijaan ICMP-viestit ovat sisällytettyinä IP-paketteihin ja 
+	käsitellään IP-kerroksella.
+
+	ICMP-viestit toimivat enimmäkseen tiedonvälitysmekanismina verkon tilasta ja 
+	suorituskyvystä sekä virheiden havaitsemisessa ja raportoinnissa. Niitä käytetään 
+	esimerkiksi ping-tyyppisten toimintojen toteuttamiseen.
+
+	ICMP-viestejä ei liitetä tiettyihin porttinumeroihin, kuten TCP- tai UDP-paketteja. 
+	Sen sijaan niiden käsittely ja vastaanotto tapahtuu IP-protokollan tasoilla, 
+	kuten IPv4 tai IPv6.
+
+	Joten ICMP:llä ei ole erillisiä lähetys- tai vastaanottosatamia, kuten TCP:llä tai UDP:llä. 
+	Sen sijaan ICMP-viestit käyttävät IP-protokollan olemassa olevia toimintoja ja kanavia 
+	tiedonsiirtoon ja vastaanottoon.
+
+Käytä Wiresharkia liikenteen kaappaamiseen ja analysointiin seuraavilla tavoilla:
+	
+	Wireshark on hyödyllinen työkalu ICMP-liikenteen kaappaamiseen ja analysointiin. 
+	Voit suodattaa ICMP-viestit ja tarkastella niiden sisältöä, kuten lähde- ja kohdeosoitteita,
+	viestityyppejä ja muita tietoja. Voit myös analysoida ICMP-viestien viiveitä ja jäljittää 
+	verkon reititystietoja.
+	
+	ICMP-protokolla ei käytä perinteisiä lähetyssatamia tai vastaanottosatamia kuten 
+	TCP- tai UDP-protokollat. Sen sijaan ICMP-viestit sisällytetään suoraan IP-paketteihin 
+	IP-protokollatasolla. ICMP-viestit tunnistetaan IP-pakettien protokollakentästä, jossa 
+	ICMP:lle on varattu oma tunniste. Näin ollen ICMP-viestit eivät käytä erillisiä 
+	porttinumeroita, kuten monet muut protokollat.
+
+Haavoittuvuudet:
+
+	ICMP-protokollalla on erilaisia haavoittuvuuksia, kuten ICMP-pommittamisen hyökkäykset, 
+	jossa hyökkääjä lähettää suuren määrän ICMP-pyynnöt liikennekuorman luomiseksi. 
+	Tämä voi aiheuttaa verkon ylikuormitusta ja palvelunestohyökkäyksiä.
+
+Protokollan tunnetut hyökkäykset:
+
+	ICMP-protokollaa voidaan hyödyntää erilaisiin hyökkäyksiin, kuten ICMP Flood -hyökkäykseen, 
+	jossa hyökkääjä lähettää suuren määrän ICMP-pyynnöt kohdelaitteelle tai verkolle. 
+	Tämä voi aiheuttaa verkon resurssien ylikuormitusta tai järjestelmän kaatumisen.
+
+Yhteenveto:
+	
+	ICMP on tärkeä protokolla verkkoliikenteen hallintaan ja viestien välittämiseen. 
+	Se tarjoaa työkalut verkon diagnostiikkaan ja vianmääritykseen. Samalla se voi 
+	olla haavoittuvainen erilaisille hyökkäyksille, jotka voivat aiheuttaa verkon ongelmia ja 
+	palvelunestohyökkäyksiä.

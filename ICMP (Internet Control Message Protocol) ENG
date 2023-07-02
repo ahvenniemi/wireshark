@@ -1,0 +1,94 @@
+ICMP (Internet Control Message Protocol)
+
+	ICMP (Internet Control Message Protocol) is a protocol belonging to the Internet 
+	protocol suite that is used for network management, error reporting, and diagnostics. 
+	It operates in conjunction with the IP protocol and enables communication between network 
+	devices.
+
+Introduction:
+
+	ICMP is designed to provide management functions related to data transmission, such as 
+	network status checks, error reporting, and routing information updates. It uses IP packets 
+	to convey control messages and responses.
+
+Basics:
+
+	ICMP operates on top of the IP protocol and uses the format of IP packets. It includes 
+	various message types, such as error messages, unicast request-reply messages, and messages 
+	for exchanging routing information.
+
+Operation:
+
+	ICMP messages are unidirectional and are used to inform network devices about errors that 
+	have occurred or to request information. For example, ICMP messages can contain information 
+	that a router cannot find the destination or a request to return a ping reply.
+
+Key Features:
+
+	ICMP messages include different types of message types, such as Echo Request/Reply 
+	(ping), Destination Unreachable, Time Exceeded, Redirect, etc. ICMP messages can also 
+	include additional information, such as source address and sequence number.
+
+Usage:
+
+	ICMP protocol is widely used for network management and diagnostics. It is used for 
+	network troubleshooting, routing management, testing firewall settings, and traffic 
+	monitoring, among others.
+
+Summary of Protocol Usage:
+
+	ICMP protocol is used for network device management and message exchange between 
+	different entities in a network. It provides functionality that facilitates network 
+	monitoring, diagnostics, and error correction.
+
+Transmission and Reception Ports:
+
+	ICMP (Internet Control Message Protocol) does not use traditional transport ports 
+	like TCP and UDP for data transmission. Instead, ICMP messages are encapsulated within 
+	IP packets and processed at the IP layer.
+
+	ICMP messages primarily function as a mechanism for conveying information about 
+	network status and performance, as well as detecting and reporting errors. They 
+	are used, for example, to implement ping-type operations.
+
+	ICMP messages are not associated with specific port numbers like TCP or UDP packets. 
+	Instead, their handling and reception occur at the IP protocol layers, such as IPv4 or IPv6.
+
+	Therefore, ICMP does not have separate transmission or reception ports like TCP or UDP. 
+	Instead, ICMP messages utilize existing functions and channels of the IP protocol for 
+	transmission and reception.
+
+Using Wireshark for Traffic Capture and Analysis:
+
+	Wireshark is a useful tool for capturing and analyzing ICMP traffic. You can filter 
+	ICMP messages and examine their contents, such as source and destination addresses, 
+	message types, and other information. You can also analyze ICMP message delays and 
+	trace network routing information.
+
+	The ICMP protocol does not use traditional source or destination ports like TCP or UDP 
+	protocols. Instead, ICMP messages are directly embedded within IP packets at the IP protocol 
+	level. ICMP messages are identified from the protocol field of IP packets, where ICMP has its 
+	own identifier. Hence, ICMP messages do not utilize separate port numbers like many other 
+	protocols.
+
+Vulnerabilities:
+
+	ICMP protocol has various vulnerabilities, such as ICMP flooding attacks, where an attacker 
+	sends a large number of ICMP requests to create network congestion. This can cause network 
+	overload and denial-of-service attacks.
+
+Known Attacks on the Protocol:
+
+	ICMP protocol can be exploited for various attacks, such as ICMP Flood attack, where an 
+	attacker sends a large number of ICMP requests to a target device or network. This can cause 
+	resource overload or system crash.
+
+Summary:
+
+	ICMP is an important protocol for network traffic management and message exchange. It 
+	provides tools for network diagnostics and troubleshooting. At the same time, it can be 
+	vulnerable to various attacks that can cause network issues and denial-of-service attacks.
+
+
+
+
