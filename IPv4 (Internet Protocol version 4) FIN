@@ -1,0 +1,177 @@
+IPv4 (Internet Protocol version 4)
+
+Johdanto:
+
+	IPv4 (Internet Protocol version 4) on internetin yleisesti käytetty protokolla, joka 
+	mahdollistaa tietokoneiden ja muiden laitteiden verkkoyhteyden muodostamisen ja 
+	viestimisen IP-verkossa. Se on yksi internetin perusprotokollista ja sen avulla 
+	liikennöidään IPv4-osoitteiden avulla.
+
+Perusteet:
+
+	IPv4 toimii verkkokerroksella ja sen tehtävänä on reitittää ja toimittaa tietopaketteja 
+	verkon eri laitteiden välillä. Se määrittelee IP-osoitteiden muodon ja käytön sekä 
+	pakettien muotoilun ja reitityksen periaatteet.
+
+Toiminta:
+
+	IPv4 käyttää 32-bittisiä IP-osoitteita, jotka tunnistavat lähettäjän ja vastaanottajan 
+	verkkolaitteet. Kun tietopaketti lähetetään IPv4-verkossa, se jaetaan pienempiin 
+	paketteihin, joita kutsutaan IP-paketeiksi. Nämä paketit sisältävät lähettäjän ja 
+	vastaanottajan IP-osoitteet sekä muita tietoja, kuten protokolla- ja tarkistussummakentät.
+
+Tärkeimmät ominaisuudet:
+
+	IP-osoitteet: 
+	
+	IPv4 käyttää 32-bittisiä IP-osoitteita, jotka mahdollistavat laitteiden yksilöinnin ja 
+	viestimisen verkon yli.
+
+	Reititys: 
+	
+	IPv4-verkossa toimivat reitittimet ohjaavat IP-paketteja oikeaan kohteeseen 
+	reititystaulujen avulla.
+
+	Fragmentointi: 
+	
+	IPv4 voi jakaa suuret tietopaketit pienempiin osiin, jotta ne voidaan lähettää verkossa 
+	pienemmissä paloissa.
+	
+	Protokollatuki: 
+	
+	IPv4 tukee erilaisia yläkerroksen protokollia, kuten TCP (Transmission Control Protocol) 
+	ja UDP (User Datagram Protocol), joiden avulla sovellukset voivat lähettää tietoa verkon 
+	yli.
+	
+	Käyttö:
+	
+	IPv4 on laajalti käytössä internetissä ja useimmissa verkoissa. Se mahdollistaa laitteiden 
+	yhteydenmuodostuksen ja tiedonsiirron IP-verkossa. IPv4-osoitteet jaetaan verkkopalveluntarjoajien 
+	toimesta ja niitä käytetään laitteiden tunnistamiseen ja reititykseen.
+
+	Yhteenveto - protokollan käytöstä:
+
+	Lähetys- ja vastaanottosatamat: 
+	
+	IPv4 ei käytä erillisiä portteja, koska se toimii verkkokerroksella. IP-pakettien 
+	lähettäminen ja vastaanottaminen perustuu IP-osoitteisiin ja reititystauluihin.
+
+Wiresharkin käyttö: 
+
+	Wireshark on hyödyllinen työkalu IPv4-verkkoliikenteen kaappaamiseen ja analysointiin. 
+	Wireshark voi näyttää lähetetyt ja vastaanotetut IP-paketit, niiden sisällön, lähde- ja 
+	kohdeosoitteet sekä muut 
+	tietoelementit.
+
+Haavoittuvuudet:
+
+	IPv4:llä on erilaisia haavoittuvuuksia ja tietoturvauhkia, jotka voivat kohdistua 
+	verkkoliikenteeseen tai itse protokollaan.  
+
+	IP Spoofing: 
+	
+	Hyökkääjä väärentää IP-osoitteensa, jotta se näyttää tulevan luotettavasta lähteestä. Tämä voi 
+	helpottaa hyökkääjän 
+	salailua ja mahdollistaa haitallisen liikenteen lähettämisen tai verkkojen palveluiden petoksen.
+
+	ICMP Flood: 
+	
+	Hyökkääjä lähettää suuren määrän ICMP-paketteja (Internet Control Message Protocol) kohteelle 
+	aiheuttaen tietoliikenteen ylikuormituksen ja siten palvelunestohyökkäyksen (DoS).
+
+	SYN Flood: 
+	
+	Hyökkääjä lähettää suuren määrän TCP SYN-paketteja, mutta ei suorita loppuun kolmikätistä 
+	kättelyä, joka normaalisti tapahtuu TCP-yhteyden muodostamisessa. Tämä voi aiheuttaa 
+	palvelunestohyökkäyksen, kun palvelin resurssit kuluvat SYN-pyynnöistä.
+
+	IP Fragmentation Attack: 
+	
+	Hyökkääjä lähettää suuren määrän pieniä IP-fragmentteja, joita vastaanottajan on käsiteltävä 
+	ja koottava oikeiksi paketeiksi. Tällaiset hyökkäykset voivat aiheuttaa palvelimen suorituskyvyn 
+	heikkenemistä tai jopa kaatumisen.
+
+	Smurf Attack: 
+	
+	Hyökkääjä lähettää ICMP Echo Request -pyyntöjä verkon broadcast-osoitteeseen, käyttäen 
+	väärennettyä lähde-IP-osoitetta. Tämä aiheuttaa laajamittaista ICMP-liikennettä, joka 
+	voi ylikuormittaa tietoliikenteen vastaanottajat ja johtaa palvelunestohyökkäykseen.
+
+	DNS Amplification: 
+	
+	Hyökkääjä lähettää DNS-palvelimelle pyyntöjä, joissa käytetään äärennettyä lähde-IP
+	-osoitetta. Tällöin DNS-palvelin vastaa pyyntöön oikealle IP-osoitteelle, joka voi olla 
+	kohteen kohde. Tämä hyökkäys voi aiheuttaa laajaa liikenteen ylikuormitusta.
+
+	IP Routing Protocol Attacks: 
+	
+	IP-reititysprotokollat, kuten RIP (Routing Information Protocol) ja OSPF 
+	(Open Shortest Path First), ovat alttiita hyökkäyksille, kuten vääriin reititystietoihin
+	tai tietoliikenteen sieppaukseen. Tällaiset hyökkäykset voivat johtaa verkon liikenteen 
+	ohjaamiseen väärille reitittimille tai tietojen salakuunteluun.
+
+	Wiresharkin käyttö seuraavilla tavoilla:
+
+	Liikenteen suodatus:
+	
+	Wiresharkissa voit suodattaa liikennettä eri tavoilla. Voit esimerkiksi määrittää suodattimen, 
+	joka näyttää vain tietyn protokollan paketit tai paketit tietyltä IP-osoitteelta. 
+	Suodatusmahdollisuudet auttavat keskittymään tiettyyn liikenteeseen ja analysoimaan sitä 
+	tarkemmin.
+
+	Liikenteen analysointi:
+	
+	Wireshark tarjoaa laajan valikoiman työkaluja liikenteen analysointiin. Voit tarkastella 
+	yksittäisiä paketteja, niiden sisältöä, lähteitä ja kohdeosoitteita sekä muita tietoja, 
+	kuten aikaleimoja ja protokollatietoja. Analysoimalla liikennettä voit havaita epätavallista 
+	toimintaa, tunnistaa protokollan ongelmia tai selvittää verkkoliikenteen käyttäytymistä.
+
+	Suodata IPv6-paketit:
+	
+	Jos haluat suodattaa IPv6-paketit, voit käyttää suodatusta "ip6" tai "ipv6" avainsanoilla. 
+	Tämä näyttää vain IPv6-protokollan käyttämiä paketteja ja piilottaa muut protokollat.
+
+	Suodata lähde- tai kohdeosoitteen perusteella:
+	
+	Voit suodattaa liikenteen lähde- tai kohdeosoitteen perusteella käyttämällä suodatinta 
+	"ip.src" tai "ip.dst" yhdessä halutun IP-osoitteen kanssa. Tällä tavoin voit tarkastella 
+	vain paketteja, jotka liittyvät tiettyyn lähde- tai kohdeosoitteeseen.
+
+	Suodata protokollan perusteella:
+	
+	Voit myös suodattaa liikenteen protokollan perusteella käyttämällä suodatinta "ip.proto" tai 
+	"ip6.proto" yhdessä protokollan numeron kanssa. Esimerkiksi "ip.proto == 6" suodattaa 
+	TCP-paketit.
+
+	Yhdistetyt kaappaussuodattimet:
+	
+	Wiresharkissa voit myös käyttää yhdistettyjä kaappaussuodattimia, jotka yhdistävät useita 
+	suodattimia yhdeksi tarkemmaksi suodatukseksi. Tämä auttaa sinua keskittymään tiettyyn 
+	liikenteeseen tai protokolla-analyysiin.
+
+	Wiresharkin käyttö oletusporttien kanssa:
+	
+	Wireshark tunnistaa monien yleisten protokollien oletusportit automaattisesti. 
+	Tämä tarkoittaa, että voit suodattaa liikenteen näiden porttien perusteella, esimerkiksi 
+	"tcp.port == 80" suodattaa HTTP-liikenteen. Wiresharkissa on laaja tietokanta oletusporttien 
+	tunnistamiseksi, mikä helpottaa tietyn protokollan liikenteen erottamista muusta liikenteestä.
+
+	Tällä tavoin Wiresharkin avulla voit suodattaa ja analysoida liikennettä monin eri tavoin, 
+	jotta voit keskittyä tarkasteltavaan liikenteeseen ja saada syvällisempää tietoa protokollan 
+	toiminnasta ja verkkoliikenteestä.
+	
+Yhteenveto:
+
+	IPv4 (Internet Protocol version 4) on internetin yleisesti käytetty protokolla, joka 
+	mahdollistaa tietokoneiden ja muiden laitteiden verkkoyhteyden muodostamisen ja 
+	viestimisen IP-verkossa. Se toimii verkkokerroksella ja sen tehtävänä on reitittää 
+	ja toimittaa tietopaketteja verkon eri laitteiden välillä. IPv4 käyttää 32-bittisiä 
+	IP-osoitteita, jotka tunnistavat lähettäjän ja vastaanottajan verkkolaitteet.
+
+	IPv4-osoitteet mahdollistavat laitteiden yksilöinnin ja viestimisen verkon yli. 
+	IPv4-verkossa toimivat reitittimet ohjaavat IP-paketteja oikeaan kohteeseen 
+	reititystaulujen avulla. IPv4 voi jakaa suuret tietopaketit pienempiin osiin, 
+	jotta ne voidaan lähettää verkossa pienemmissä paloissa. IPv4 tukee erilaisia 
+	yläkerroksen protokollia, kuten TCP (Transmission Control Protocol) ja UDP 
+	(User Datagram Protocol), joiden avulla sovellukset voivat lähettää tietoa 
+	verkon yli.

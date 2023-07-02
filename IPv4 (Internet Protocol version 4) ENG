@@ -1,0 +1,170 @@
+IPv4 (Internet Protocol version 4)
+
+Introduction:
+
+	IPv4 (Internet Protocol version 4) is a widely used protocol on the Internet 
+	that enables computers and other devices to establish network connections and 
+	communicate in an IP network. It is one of the fundamental protocols of the 
+	Internet, and it operates using IPv4 addresses.
+
+Basics:
+
+	IPv4 operates at the network layer and is responsible for routing and delivering 
+	data packets between different devices on the network. It defines the format and 
+	usage of IP addresses, as well as the principles of packet formatting and routing.
+
+Operation:
+
+	IPv4 uses 32-bit IP addresses that identify the sender and receiver network devices. 
+	When a data packet is sent over an IPv4 network, it is divided into smaller packets 
+	called IP packets. These packets contain the sender and receiver IP addresses, as 
+	well as other information such as protocol and checksum fields.
+
+Key Features:
+
+	IP Addresses:
+
+	IPv4 uses 32-bit IP addresses that enable device identification and communication 
+	over the network.
+
+	Routing:
+
+	Routers in an IPv4 network direct IP packets to the correct destination using 
+	routing tables.
+
+	Fragmentation:
+
+	IPv4 can divide large data packets into smaller fragments for transmission in 
+	smaller pieces over the network.
+
+	Protocol Support:
+
+	IPv4 supports various upper-layer protocols such as TCP (Transmission Control 
+	Protocol) and UDP (User Datagram Protocol), which allow applications to send data 
+	over the network.
+
+Usage:
+
+	IPv4 is widely used on the Internet and in most networks. It enables device 
+	connectivity and data transmission in an IP network. IPv4 addresses are allocated 
+	by Internet service providers and are used for device identification and routing.
+
+	Summary - Protocol Usage:
+
+	Transmission and Reception Ports:
+
+	IPv4 does not use separate ports as it operates at the network layer. Sending 
+	and receiving IP packets are based on IP addresses and routing tables.
+
+Using Wireshark:
+
+	Wireshark is a useful tool for capturing and analyzing IPv4 network traffic. Wireshark 
+	can display the sent and received IP packets, their content, source and destination 
+	addresses, and other information elements.
+
+Vulnerabilities:
+
+	IPv4 has various vulnerabilities and security threats that can target network traffic 
+	or the protocol itself.
+
+	IP Spoofing:
+
+	An attacker falsifies their IP address to appear as a trustworthy source. This can 
+	facilitate attacker anonymity and enable the sending of malicious traffic or deceive 
+	network services.
+
+	ICMP Flood:
+
+	An attacker sends a large number of ICMP (Internet Control Message Protocol) packets 
+	to a target, causing network congestion and resulting in a denial-of-service (DoS) 
+	attack.
+
+	SYN Flood:
+
+	An attacker sends a large number of TCP SYN packets but does not complete the 
+	three-way handshake, which normally occurs during TCP connection establishment. This 
+	can cause a denial-of-service attack as server resources are depleted by SYN requests.
+
+	IP Fragmentation Attack:
+
+	An attacker sends a large number of small IP fragments that the receiver needs to 
+	process and assemble into correct packets. Such attacks can degrade server performance 
+	or even lead to a server crash.
+
+	Smurf Attack:
+
+	An attacker sends ICMP Echo Request messages to the network's broadcast address, 
+	using a spoofed source IP address. This generates widespread ICMP traffic that can 
+	overwhelm the recipients and lead to a denial-of-service (DoS) attack.
+
+	DNS Amplification:
+
+	An attacker sends requests to a DNS server using a forged source IP address. The DNS 
+	server responds to the request with a large response to the target's IP address, 
+	potentially causing significant traffic overload.
+
+	IP Routing Protocol Attacks:
+
+	IP routing protocols such as RIP (Routing Information Protocol) and OSPF (Open Shortest 
+	Path First) are vulnerable to attacks, including false routing information or traffic 
+	interception. These attacks can result in the misdirection of network traffic to incorrect 
+	routers or data eavesdropping.
+
+Using Wireshark in the following ways:
+
+	Traffic Filtering:
+
+	Wireshark allows you to filter traffic in various ways. For example, you can set a 
+	filter to display only packets of a specific protocol or packets from a specific IP 
+	address. Filtering options help focus on specific traffic for more detailed analysis.
+
+	Traffic Analysis:
+
+	Wireshark provides a wide range of tools for traffic analysis. You can examine individual 
+	packets, their contents, source and destination addresses, timestamps, protocol information, 
+	and more. By analyzing the traffic, you can detect unusual behavior, identify protocol 
+	issues, or understand network traffic patterns.
+
+	Filtering IPv6 Packets:
+
+	To filter IPv6 packets, you can use filters with keywords like "ip6" or "ipv6". This will 
+	display packets that use the IPv6 protocol and hide others.
+
+	Filtering Based on Source or Destination Address:
+
+	You can filter traffic based on the source or destination IP address using filters like 
+	"ip.src" or "ip.dst" along with the desired IP address. This allows you to view only 
+	packets related to a specific source or destination address.
+
+	Filtering Based on Protocol:
+
+	You can also filter traffic based on the protocol using filters like "ip.proto" or 
+	"ip6.proto" along with the protocol number. For example, "ip.proto == 6" filters TCP 
+	packets.
+
+	Combined Capture Filters:
+
+	Wireshark allows the use of combined capture filters, which combine multiple filters 
+	into a more precise filter. This helps focus on specific traffic or protocol analysis.
+
+	Using Wireshark with Default Ports:
+
+	Wireshark automatically recognizes default ports for many common protocols. This means 
+	you can filter traffic based on these ports, such as "tcp.port == 80" to filter HTTP 
+	traffic. Wireshark has an extensive database for identifying default ports, making it 
+	easier to distinguish specific protocol traffic from others.
+
+Summary:
+
+	IPv4 (Internet Protocol version 4) is a widely used protocol in the internet that 
+	enables computers and other devices to establish network connections and communicate over 
+	IP networks. It operates at the network layer and is responsible for routing and delivering 
+	data packets between different devices on the network. IPv4 uses 32-bit IP addresses to 
+	identify the sender and receiver devices.
+
+	IPv4 addresses allow for device identification and communication over the network. 
+	Routers in an IPv4 network direct IP packets to the correct destination using routing 
+	tables. IPv4 can fragment large data packets into smaller pieces for transmission in the 
+	network. It also supports various transport layer protocols such as TCP (Transmission 
+	Control Protocol) and UDP (User Datagram Protocol), which enable applications to 
+	send data over the network.
