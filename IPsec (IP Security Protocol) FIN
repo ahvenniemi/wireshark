@@ -1,0 +1,107 @@
+IPsec (IP Security Protocol)
+
+Johdanto:
+
+	IPsec (IP Security Protocol) on tietoturvaprotokolla, joka tarjoaa suojausta 
+	IP-verkkoliikenteelle. Se on suunniteltu tarjoamaan tietoturvallinen ja 
+	luottamuksellinen tiedonsiirto verkossa. IPsec toimii verkkokerroksella ja 
+	käyttää erilaisia protokollia, kuten Authentication Header (AH) ja Encapsulating 
+	Security Payload (ESP), tietoturvapalveluiden tarjoamiseen.
+
+Perusteet:
+
+	IPsec:n tavoitteena on tarjota useita tietoturvapalveluita, kuten tietosuoja, 
+	tietoturvallinen tunnistautuminen ja tietovirheiden havaitseminen ja korjaus. 
+	Se perustuu salaamiseen, viestien eheyden tarkistamiseen ja tunnistautumiseen.
+
+Toiminta:
+
+	IPsec toimii kahdessa tilassa: kuljetustilassa (Transport Mode) ja tunnelointitilassa 
+	(Tunnel Mode). Kuljetustilassa IP-pakettiin lisätään tietoturvaprotokollan otsikko, 
+	kun taas tunnelointitilassa alkuperäinen IP-paketti kapseloidaan uuteen IP-pakettiin, 
+	joka sisältää tietoturvaprotokollan otsikon.
+
+Tärkeimmät ominaisuudet:
+
+	Tietosuoja: 
+	
+	IPsec mahdollistaa tiedonsalaamisen, joka suojaa IP-paketin sisällön luvattomalta 
+	pääsyltä.
+
+	Tietoturvallinen tunnistautuminen: 
+	
+	IPsec tarjoaa menetelmiä osapuolten tunnistamiseksi ja varmistamiseksi niiden aitouden.
+	
+	Tietovirheiden havaitseminen ja korjaus: 
+	IPsec sisältää mekanismeja tietovirheiden, kuten pakettien muuttamisen tai väärentämisen, 
+	havaitsemiseen ja tarvittaessa korjaamiseen.
+
+	Käyttö:
+	
+	IPsec:ää käytetään laajasti virtuaalisten erillisverkkojen (Virtual Private Networks, 
+	VPN) toteuttamiseen. Se mahdollistaa suojatun tiedonsiirron organisaation sisäisen verkon 
+	ja etäyhteyksien välillä. Lisäksi IPsec:ää voidaan käyttää yhteyden muodostamiseen kahden 
+	verkon välillä ja verkkoliikenteen suojaamiseen salauksella ja tunnistautumisella.
+
+	Yhteenveto - protokollan käytöstä:
+
+	Lähetys- ja vastaanottosatamat: 
+	
+	IPsec ei käytä erillisiä portteja, koska se toimii IP-verkkokerroksella. IPsec-paketit 
+	kulkevat yleensä IP-protokollan (IPv4 tai IPv6) mukana, ja ne käyttävät IP-otsikon 
+	sisällä olevia kenttiä tunnistamiseen.
+
+Wiresharkin käyttö: 
+
+	Wireshark on hyödyllinen työkalu IPsec-liikenteen kaappaamiseen ja analysointiin. 
+	Wiresharkin avulla voit havaita IPsec-paketteja ja tarkastella niiden sisältöä, kuten 
+	salausta, tunnistautumista ja muita tietoturvaparametreja.
+	
+Haavoittuvuudet:
+	
+	IPsec:n toteutuksessa voi esiintyä erilaisia haavoittuvuuksia, jotka voivat mahdollistaa 
+	hyökkääjän kiertää tietoturvamekanismeja tai hyödyntää heikkouksia salauksessa tai 
+	tunnistautumisessa. Joitakin yleisiä IPsec-haavoittuvuuksia ovat:
+
+	Salauksen heikkoudet: 
+	
+	Heikot salausalgoritmit tai virheellinen salauskonfiguraatio voivat altistaa 
+	tietoturvauhkille.
+	
+	Tunnistautumisen kiertäminen: 
+	
+	Huonosti toteutettu tai konfiguroitu tunnistautuminen voi antaa hyökkääjälle mahdollisuuden
+	kiertää tunnistusmekanismit.
+
+	Avainhallinnan ongelmat: 
+	
+	Virheellinen avainhallinta voi johtaa tietoturvauhkiin, kuten avainten vuotamiseen 
+	tai niiden väärinkäyttöön.
+
+	Protokollan tunnetut hyökkäykset:
+	
+	Tunnettuja hyökkäyksiä, jotka voivat kohdistua IPsec-protokollaan, ovat:
+
+	Avainpaljastukset: 
+	
+	Hyökkääjä voi yrittää paljastaa IPsec-liikenteen salausavaimet ja käyttää niitä tietojen 
+	salaamiseen tai purkamiseen.
+
+	Väärennetyt tunnistetiedot: 
+	
+	Hyökkääjä voi yrittää väärentää tunnistetiedot ja päästä luvattomasti verkkoon tai 
+	salakuunnella liikennettä.
+	
+	Palvelunestohyökkäykset: 
+	
+	Hyökkääjä voi yrittää kuormittaa IPsec-palvelinta tai resursseja, mikä voi johtaa 
+	palvelunestoon laillisilta käyttäjiltä.
+
+Yhteenveto:
+	
+	IPsec on tietoturvaprotokolla, joka tarjoaa tietosuojan, tunnistautumisen ja tietovirheiden 
+	havaitsemisen ja korjauksen IP-verkkoliikenteelle. Se on laajasti käytetty VPN-ratkaisu 
+	organisaatioiden ja etäyhteyksien välillä. Wireshark on hyödyllinen työkalu IPsec-liikenteen 
+	analysointiin, ja se voi auttaa havaitsemaan haavoittuvuuksia ja tunnettuja hyökkäyksiä 
+	IPsec-protokollaa vastaan. On tärkeää varmistaa IPsec-toteutuksen oikea konfiguraatio ja 
+	päivitysten ajantasaisuus, jotta haavoittuvuuksilta ja hyökkäyksiltä voidaan suojautua.
