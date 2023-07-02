@@ -1,0 +1,100 @@
+RTP (Real-time Transport Protocol)
+
+Johdanto:
+
+	RTP (Real-time Transport Protocol) on internetin reaaliaikaiseen multimedia-tiedonsiirtoon tarkoitettu protokolla. 
+	Se on suunniteltutehokkaaseen ja luotettavaan äänen, videon ja muiden reaaliaikaisten mediadatan siirtoon verkon yli. 
+	RTP toimii yhdessä RTCP:n (Real-time Transport Control Protocol) kanssa, joka vastaa tiedon hallinnasta ja 
+	tilastotiedoista.
+
+Perusteet:
+
+	RTP on protokolla, joka mahdollistaa reaaliaikaisen mediasisällön, kuten äänen ja videon, lähettämisen ja 
+	vastaanottamisen verkon yli. Se jakaa multimedia-tiedon pienempiin paketteihin, joissa on aikaleima, sekvenssinumero 
+	ja muita tietoja, jotka mahdollistavat datan toistamisen oikeassa järjestyksessä ja synkronoinnin.
+
+Toiminta:
+
+	RTP:n toiminta perustuu UDP-protokollaan, joka mahdollistaa nopean ja tehokkaan datansiirron. RTP-pakettiin lisätään 
+	aikaleima, joka kuvaa paketin lähettämisen aikaa, sekä sekvenssinumero, joka auttaa datan oikeassa järjestyksessä 
+	toistamisessa. RTCP-protokolla puolestaan vastaa pakettien tilastotietojen keräämisestä, lähettäjän ja vastaanottajan 
+	tilan seurannasta ja virheiden havaitsemisesta.
+
+Tärkeimmät ominaisuudet:
+
+	Aikaleimat: 
+	
+	RTP sisältää aikaleimat, jotka mahdollistavat synkronoinnin ja toistamisen oikeassa ajassa. 
+	
+	Sekvenssinumerointi: 
+	
+	Jokaisessa RTP-paketissa on sekvenssinumero, joka auttaa datan järjestyksessä toistamisessa.
+	
+	Käyttäjänohjaus: 
+	
+	RTP tukee erilaisia käyttäjänohjaustoimintoja, kuten äänenvoimakkuuden säätöä, puskurien hallintaa ja ajansiirtotietoja.
+
+	Käyttö: RTP:ta käytetään laajalti reaaliaikaisessa multimedia-viestinnässä, kuten Voice over IP (VoIP) -puheluissa, 
+	videoneuvotteluissa, streaming-palveluissa ja interaktiivisissa live-lähetyksissä. Se on tärkeä protokolla, joka 
+	mahdollistaa korkealaatuisen ja viiveettömän mediasisällön siirron verkon yli.
+
+Yhteenveto - protokollan käytöstä:
+
+	Lähetys- ja vastaanottosatamat: RTP käyttää yleensä dynaamisia UDP-portteja välittääkseen mediatietoa. Tarkat 
+	portit määräytyvät sovelluksen tai palvelun mukaan, joka käyttää RTP:ta. Yleisesti käytetään portteja välillä 
+	16384-32767.
+
+Wiresharkin käyttö: 
+	
+	Wireshark on hyödyllinen työkalu RTP-liikenteen kaappaamiseen ja analysointiin. Se pystyy näyttämään RTP-paketit, 
+	niiden sisällön, aikaleimat, sekvenssinumerot ja muut tietoelementit.
+	
+Lähetys- ja vastaanottosatamat:
+
+	RTP käyttää dynaamisia portteja, mikä tarkoittaa, että sen lähettämät paketit eivät ole sidottuja tiettyihin 
+	porttinumeroihin. RTP-paketit kulkevat yleensä UDP:n (User Datagram Protocol) päällä, ja UDP:n porttinumerot 
+	määräävät, mihin porttiin RTP-paketit lähetetään ja mistä niitä vastaanotetaan.
+
+	RTP:n vastaanottosatama riippuu sovelluksesta tai palvelimesta, joka vastaanottaa ja käsittelee RTP-paketteja. 
+	Tyypillisesti sovellukset määrittävät itse porttinumeron, johon ne haluavat vastaanottaa RTP-liikennettä. 
+	Yleisesti käytettyjä porttinumeroita RTP:lle ovat esimerkiksi 5004 ja 6000-7000.
+
+Käytä Wiresharkia liikenteen kaappaamiseen ja analysointiin:
+
+	Voit käyttää Wireshark-ohjelmaa kaappaamaan ja analysoimaan RTP-liikennettä seuraavilla tavoilla:
+
+	Suodatin RTP-liikenteen kaappaamiseksi: 
+	
+	Voit käyttää Wiresharkin suodatintoimintoa kaappaamaan vain RTP-paketit. Suodatin voi olla esimerkiksi 
+	"rtp" tai "udp.port == 5004", mikäli tiedät tietyn porttinumeron, jota RTP-kommunikaatiossa käytetään.
+
+	Tarkastele RTP-pakettien sisältöä: Wireshark näyttää kaapatun RTP-liikenteen paketit ja niiden yksityiskohdat, 
+	kuten lähde- ja kohdeosoitteet, porttinumerot, sekä itse RTP-paketin sisällön, kuten ääni- tai videodatan.
+
+	Analysoi RTP-istuntoa: Wireshark mahdollistaa RTP-istuntojen analysoinnin, jossa voit tarkastella jatkuvan 
+	RTP-liikenteen kuormitusta, viiveitä, pakettien menetystä ja muita tilastotietoja.
+
+	Huomioi, että RTP-protokolla voi käyttää erilaisia tietovirtoja (payload), kuten ääniä tai videoita, ja 
+	näiden tietovirtojen portit voivat vaihdella sovellusten tai palvelimien välillä. Tästä syystä on tärkeää tietää, 
+	mitä sovellusta tai palvelinta tarkkaan ottaen analysoidaan, jotta voidaan määrittää oikeat porttinumerot ja 
+	suodattimet RTP-liikenteen kaappaamiseen.	
+
+Haavoittuvuudet:
+	
+	RTP-protokollalla itsessään ei ole erityisiä tunnettuja haavoittuvuuksia. Kuitenkin sen käyttöön liittyvät sovellukset 
+	ja palvelut voivat olla alttiita erilaisille tietoturvaongelmille, kuten palvelunestohyökkäyksille, tietomurroille 
+	tai laadun heikentämiselle.
+
+Protokollan tunnetut hyökkäykset:
+
+	RTP-protokolla ei ole suoraan alttiina hyökkäyksille, mutta sen käyttöön liittyvät sovellukset ja palvelut voivat 
+	olla alttiita erilaisille hyökkäyksille. Esimerkkejä voivat olla palvelunestohyökkäykset, SIP (Session Initiation Protocol) 
+	-pommittaminen tai datan muuttaminen ja väärentäminen RTP-paketeissa.
+
+Yhteenveto:
+
+	RTP on reaaliaikaiseen multimedia-tiedonsiirtoon tarkoitettu protokolla, joka mahdollistaa äänen, videon ja muiden 
+	reaaliaikaisten mediadatan siirron verkon yli. Se toimii yhdessä RTCP-protokollan kanssa ja käyttää UDP:tä nopeaan 
+	datansiirtoon. RTP on laajalti käytössä erilaisissa reaaliaikaisissa viestintäsovelluksissa ja tarjoaa tärkeitä 
+	ominaisuuksia, kuten aikaleimat ja sekvenssinumeroinnin. Wireshark on hyödyllinen työkalu RTP-liikenteen analysointiin 
+	ja sen avulla voidaan havaita mahdollisia tietoturvaongelmia.

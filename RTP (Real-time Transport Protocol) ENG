@@ -1,0 +1,131 @@
+RTP (Real-time Transport Protocol)
+
+Introduction:
+
+	RTP (Real-time Transport Protocol) is a protocol designed for real-time multimedia data 
+	transmission over the Internet. It is designed for efficient and reliable transmission of 
+	voice, video, and other real-time media data over the network. RTP works in conjunction 
+	with RTCP (Real-time Transport Control Protocol), which handles data management and 
+	statistical information.
+
+Basics:
+
+	RTP is a protocol that enables real-time media content, such as audio and video, to be 
+	transmitted and received over the network. It divides multimedia data into smaller packets 
+	that include a timestamp, sequence number, and other information that allow for data playback 
+	in the correct order and synchronization.
+
+Operation:
+
+	RTP operates based on the UDP (User Datagram Protocol), which enables fast and efficient data 
+	transmission. An RTP packet includes a timestamp that describes the packet's transmission time 
+	and a sequence number that helps in playback in the correct order. The RTCP protocol, on the 
+	other hand, is responsible for collecting packet statistics, monitoring the sender and 
+	receiver's status, and detecting errors.
+
+Key Features:
+
+	Timestamps: 
+	
+	RTP includes timestamps that allow for synchronization and playback in real-time.
+	Sequence numbering: Each RTP packet has a sequence number that helps in playback in the correct 
+	order.
+
+	User control: 
+	
+	RTP supports various user control functions such as volume adjustment, buffer 
+	management, and timing information.
+
+	Usage: 
+	
+	RTP is widely used in real-time multimedia communication, such as Voice over IP (VoIP) 
+	calls, video conferencing, streaming services, and interactive live broadcasts. It is an essential 
+	protocol that enables high-quality and delay-free media content transmission over the network.
+
+	FEC (Forward Error Correction): RTP can utilize FEC techniques for error correction in data 
+	transmission. FEC adds extra redundancy to packets, allowing for error detection and correction 
+	at the receiving end.
+
+	Codec support: 
+	
+	RTP does not define audio or video encoding methods itself. Instead, it supports 
+	various audio and video codecs such as G.711 (PCMU), G.729, H.264, VP8, etc. This allows flexibility 
+	in supporting different media types.
+
+	NAT (Network Address Translation) support: 
+	
+	The use of RTP can be challenging when combined with a 
+	NAT environment because it requires sending and receiving data on dynamic UDP ports. The NAT server 
+	must handle these dynamic ports correctly for successful media transmission.
+
+	SRTP (Secure Real-time Transport Protocol): 
+	
+	SRTP is an extension to the RTP protocol that enables 
+	data encryption and security. SRTP protects media data using encryption mechanisms such as AES 
+	(Advanced Encryption Standard), ensuring data remains secure during transmission over the network.
+
+Summary of Protocol Usage:
+
+	Transmission and reception ports: RTP typically uses dynamic UDP ports to transmit media data. 
+	The specific ports are determined by the application or service using RTP. Generally, ports within 
+	the range of 16384-32767 are used.
+
+	Using Wireshark: 
+
+	Wireshark is a useful tool for capturing and analyzing RTP traffic. It can display RTP packets, 
+	their contents, timestamps, sequence numbers, and other data elements.
+
+Vulnerabilities:
+
+	RTP protocol itself does not have specific known vulnerabilities. However, applications and 
+	services associated with its usage can be susceptible to various security issues such as 
+	denial-of-service attacks, data breaches, or degradation of quality.
+
+	Known Attacks on the Protocol:
+	
+	RTP protocol itself is not directly vulnerable to attacks, but applications and services 
+	associated with its usage can be susceptible to various attacks. Examples include denial-of-service 
+	attacks, SIP (Session Initiation Protocol) flooding, or data manipulation and forgery in RTP packets.
+	
+Transmission and Reception Ports:
+
+	RTP uses dynamic ports, which means that its transmitted packets are not bound to specific port numbers. 
+	RTP packets typically travel over the User Datagram Protocol (UDP), and the UDP port numbers determine 
+	where the RTP packets are sent and received.
+
+	The reception port for RTP depends on the application or server that receives and processes RTP packets. 
+	Typically, applications specify the port number to which they want to receive RTP traffic. Commonly used 
+	port numbers for RTP include 5004 and 6000-7000.
+
+Using Wireshark to Capture and Analyze Traffic:
+
+	You can use the Wireshark program to capture and analyze RTP traffic in the following ways:
+
+	Filtering to capture RTP traffic:
+	
+	You can use Wireshark's filtering function to capture only RTP packets. The filter can be something 
+	like "rtp" or "udp.port == 5004" if you know the specific port number used for RTP communication.
+
+	Examining the contents of RTP packets:
+	
+	Wireshark displays the captured RTP traffic packets and their details, such as source and destination 
+	addresses, port numbers, and the content of the RTP packet itself, such as audio or video data.
+
+	Analyzing RTP sessions:
+		
+	Wireshark enables analysis of RTP sessions, where you can examine continuous RTP traffic load, delays, 
+	packet loss, and other statistical information.
+
+	Note that the RTP protocol can use different data streams (payload), such as audio or video, and the 
+	ports for these data streams may vary between applications or servers. Therefore, it is important to 
+	know precisely which application or server you are analyzing to determine the correct port numbers 
+	and filters for capturing RTP traffic.
+
+Summary:
+
+	RTP is a protocol designed for real-time multimedia data transmission, enabling the transmission 
+	of audio, video, and other real-time media data over the network. It works in conjunction with 
+	the RTCP protocol and utilizes UDP for fast data transmission. RTP is widely used in various 
+	real-time communication applications and provides important features such as timestamps and sequence 
+	numbering. Wireshark is a useful tool for analyzing RTP traffic and identifying potential security 
+	issues.
