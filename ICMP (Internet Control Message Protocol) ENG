@@ -88,7 +88,3 @@ Summary:
 	ICMP is an important protocol for network traffic management and message exchange. It 
 	provides tools for network diagnostics and troubleshooting. At the same time, it can be 
 	vulnerable to various attacks that can cause network issues and denial-of-service attacks.
-
-
-
-
